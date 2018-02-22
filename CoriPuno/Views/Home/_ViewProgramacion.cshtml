@@ -1,0 +1,93 @@
+﻿@model CoriPuno.Entidad.ProgramacionDiariaCabEntidad
+@{
+    ViewBag.Title = "_ViewProgramacion";
+}
+
+<div class="alert alert-success" role="alert" id="success_message"> @ViewBag.Mensaje</div>
+<div class="alert alert-danger" role="alert" id="danger_message"> @ViewBag.Mensaje</div>
+
+@if (Model != null && Model.DetalleProgramacion != null && Model.DetalleProgramacion.Count > 0)
+{
+                <!-- Success message -->
+
+    <table id="keywords" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th><span>Año</span></th>
+                <th><span>Mes</span></th>
+                <th><span>Fecha Inicio</span></th>
+                <th><span>Fecha Ejecucion</span></th>
+                <th><span>Turno</span></th>
+                <th><span>Ley</span></th>
+                <th><span>Labor Origen</span></th>
+                <th><span>Labor Destino</span></th>
+                <th><span>Cap. Maxima</span></th>
+                <th><span>Distancia</span></th>
+                <th><span>Toneladas a Procesar</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.DetalleProgramacion)
+            {
+            <tr>
+                <th scope="lalign">@item.Año</th>
+                <td>@CoriPuno.Utilitario.Functions.obtenerMes(item.Mes)</td>
+                <td>@item.FechaInicio.ToShortDateString()</td>
+                <td>@item.FechaEjecucion.ToShortDateString()</td>
+                <td>@CoriPuno.Utilitario.Functions.obtenerTurno(item.Turno)</td>
+                <td>@item.Ley</td>
+                <td>@item.LaborOrigen</td>
+                <td>@item.LaborDestino</td>
+                <td>@item.CapacidadMaxima</td>
+                <td>@item.Distancia</td>
+                <td>@item.ToneladasProcesar</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="container">
+        <form class="well form-horizontal" action=" " method="post" id="contact_form">
+            <fieldset>
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Estado:</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <input name="Estado" id="Estado" placeholder="Estado" class="form-control" type="text" value="@CoriPuno.Utilitario.Functions.obtenerEstado(Model.Estado)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Costo Minimo:</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <input name="Estado" id="Estado" placeholder="Costo Minimo" class="form-control" type="text" value="@Model.CostoAproximado">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Ley Promedio:</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <input name="LeyPromedio" id="LeyPromedio" placeholder="Ley Promedio" class="form-control" type="text" value="@Model.LeyPromedio">
+                        </div>
+                    </div>
+                </div>
+
+
+            </fieldset>
+        </form>
+    </div>
+
+
+}
+
+

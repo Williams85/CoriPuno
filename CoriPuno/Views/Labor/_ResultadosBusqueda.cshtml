@@ -1,0 +1,61 @@
+﻿@model List<CoriPuno.Entidad.LaborEntidad>
+@{
+    ViewBag.Title = "_ResultadosBusqueda";
+}
+
+@if (Model != null && Model.Count > 0)
+{
+
+    <table id="keywords" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th><span>Código</span></th>
+                <th><span>Descripcion</span></th>
+                <th><span>Tipo</span></th>
+                <th><span>Ley</span></th>
+                <th><span>Cap. Máxima</span></th>
+                <th><span>Por Roca</span></th>
+                <th><span>Área Mano Obra</span></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="lalign">@item.Codigo</th>
+                    <th scope="lalign">@item.Descripcion</th>
+                    <td>@CoriPuno.Utilitario.Functions.obtenerLabor(item.Tipo)</td>
+                    <td>@item.Ley</td>
+                    <td>@item.Capacidad</td>
+                    <td>@item.PorRoca</td>
+                    <td>@item.AReaManiObra</td>
+                    <td>
+                        @using (Html.BeginForm("Edicion", "Labor", FormMethod.Post, new { @role = "form" }))
+                        {
+                            <input type="hidden" id="Codigo" name="Codigo" value="@item.Codigo" />
+                            <button type="submit" class="btn btn-primary btn-sm"><span class="separarboton glyphicon glyphicon-pencil"></span>Editar</button>
+                        }
+                    </td>
+                    <td>
+                        @if (item.Estado == "A")
+                        {
+                            <button type="submit" class="btn btn-primary btn-sm btn-cerrar" data-labor="@item.Codigo"><span class="separarboton glyphicon glyphicon-pencil"></span>Cerrar Labor</button>
+                        }
+                        else if (item.Estado == "X")
+                        {
+                            <button type="submit" class="btn btn-primary btn-sm btn-abrir" data-labor="@item.Codigo" data-tipo="@item.Tipo" data-ley="@item.Ley" data-capacidad="@item.Capacidad" data-cantidadorigen="@item.CantOrigen" data-cantidaddestino="@item.CantDestino"><span class="separarboton glyphicon glyphicon-pencil"></span>Abrir Labor</button>
+                        }
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <label for="TotalOrigen">N° Total Origen</label>
+    <input type="text" id="TotalOrigen" name="TotalOrigen" readonly /><br />
+
+    <label for="TotalDestino">N° Total Destino</label>
+    <input type="text" id="TotalDestino" name="TotalDestino" readonly />
+}

@@ -1,0 +1,46 @@
+﻿@model List<CoriPuno.Entidad.ProgramacionDiariaEntidad>
+@{
+    ViewBag.Title = "_ListaProgramaciones";
+}
+
+<label>Labores Origen:</label>
+@if (Model != null && Model.Count > 0)
+{
+    <table id="keywords" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th><span>Id_prog</span></th>
+                <th><span>Fecha</span></th>
+                <th><span>Turno</span></th>
+                <th><span>Origen</span></th>
+                <th><span>Destino</span></th>
+                <th><span>TM Prog.</span></th>
+                <th><span>TM. Ejec.</span></th>
+                <th><span>Seleccionar</span></th>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id_Prog</td>
+                    <td>@item.FechaEjecucion.ToString("dd/MM/yyyy")</td>
+                    <td>@CoriPuno.Utilitario.Functions.obtenerTurno(item.Turno)</td>
+                    <td>@item.LaborOrigen</td>
+                    <td>@item.LaborDestino</td>
+                    <td>@item.ToneladasProcesar</td>
+                    <td>@item.ToneladasEjecucion</td>
+                    <td><input type="radio" value="" name="seleccion-prog" class="seleccion-prog" data-labor-name="@item.LaborOrigen" data-labor="@item.IdOrigen"></td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="NoDatos">
+        No hay programaciones
+    </div>
+}
+
+

@@ -1,0 +1,175 @@
+﻿@{
+    ViewBag.Title = "Nuevo";
+}
+
+<h1>@ViewBag.TituloPagina</h1>
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Código:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="Codigo" id="Codigo" placeholder="Codigo" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Nombre:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="Descripcion" id="Descripcion" placeholder="Descripcion" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Tipo Labor</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        <select name="Tipo" id="Tipo" class="form-control selectpicker">
+                            <option value="OR">Origen</option>
+                            <option value="DE">Destino</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Mina</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        <select name="Id_Mina" id="Id_Mina" class="form-control selectpicker">
+                            @foreach (var item in ViewBag.ListaMina)
+                            {
+                                <option value="@item.Id_Mina">@item.Descripcion</option>
+                            }
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Área:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        <select name="Id_Area" id="Id_Area" class="form-control selectpicker">
+                            @foreach (var item in ViewBag.ListaArea)
+                            {
+                                <option value="@item.Id_Area">@item.Descripcion</option>
+                            }
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Zona:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        <select name="Id_Zona" id="Id_Zona" class="form-control selectpicker">
+                            @foreach (var item in ViewBag.ListaZona)
+                            {
+                                <option value="@item.Id_Zona">@item.Descripcion</option>
+                            }
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Fecha Ley:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="date" name="FechaLey" id="FechaLey" placeholder="Fecha Ley" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Ley:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="Ley" id="Ley" placeholder="Ley" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Capacidad Máxima:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="Capacidad" id="Capacidad" placeholder="Cap. Máxima" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">% Roca</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="PorRoca" id="PorRoca" placeholder="Por Roca" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Area Maniobra:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="AReaManiObra" id="AReaManiObra" placeholder="Por Roca" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Fecha Apertura:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="date" name="FechaApertura" id="FechaApertura" placeholder="Fecha Apertura" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="alert alert-danger text-left" id="Message-Error">
+                <strong></strong>
+            </div>
+            <div class="alert alert-success text-left" id="Message-OK">
+                <strong></strong>
+            </div>
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-3">
+                    <input type="submit" id="btn-grabar" class="btn btn-primary" value="Grabar" />
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("Index","Labor")" class="btn btn-warning">Regresar</a>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+
+
+
+
+</div>
+
+@Scripts.Render("~/bundles/mantenimiento-labor")
+@Scripts.Render("~/bundles/script-layaout")
+
+
+
+
+

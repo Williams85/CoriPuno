@@ -1,0 +1,10 @@
+﻿@model List<CoriPuno.Entidad.RechazoProgramacionEntidad>
+@{
+    ViewBag.Title = "_ListaObservaciones";
+}
+@foreach (var item in Model)
+{
+    <li>@item.MotivoRechazo</li>
+}
+
+

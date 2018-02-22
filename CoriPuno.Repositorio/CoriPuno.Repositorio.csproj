@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{15A1EFBE-DD3B-4640-BE1D-2C1501AE2E5B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoriPuno.Repositorio</RootNamespace>
+    <AssemblyName>CoriPuno.Repositorio</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AreaRepositorio.cs" />
+    <Compile Include="BaseDatos\Conexion.cs" />
+    <Compile Include="BaseDatos\Reader.cs" />
+    <Compile Include="DistribucionEquiposRepositorio.cs" />
+    <Compile Include="EquipoRepositorio.cs" />
+    <Compile Include="ExtraccionBalanzaRepositorio.cs" />
+    <Compile Include="LaborRepositorio.cs" />
+    <Compile Include="MinaRepositorio.cs" />
+    <Compile Include="ParametrosRepositorio.cs" />
+    <Compile Include="PoligonoRepositorio.cs" />
+    <Compile Include="ProgramacionDiariaCabRepositorio.cs" />
+    <Compile Include="ProgramacionDiariaRepositorio.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RechazoProgramacionRepositorio.cs" />
+    <Compile Include="RutaRepositorio.cs" />
+    <Compile Include="VehiculoRepositorio.cs" />
+    <Compile Include="ZonaRepositorio.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoriPuno.Entidad\CoriPuno.Entidad.csproj">
+      <Project>{80f5058f-6ecd-461e-b783-d2d16786ede2}</Project>
+      <Name>CoriPuno.Entidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoriPuno.Utilitario\CoriPuno.Utilitario.csproj">
+      <Project>{7120f698-f522-4b3f-a064-0c536eb67765}</Project>
+      <Name>CoriPuno.Utilitario</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

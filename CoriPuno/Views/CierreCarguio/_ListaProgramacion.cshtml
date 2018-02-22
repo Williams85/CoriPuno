@@ -1,0 +1,43 @@
+﻿@model List<CoriPuno.Entidad.ProgramacionDiariaCabEntidad>
+@{
+    ViewBag.Title = "_ListaProgramacion";
+}
+
+<table id="keywords" cellspacing="0" cellpadding="0">
+    <thead>
+        <tr>
+            <th><span>Seleccionar</span></th>
+            <th><span>Fecha Ejecución</span></th>
+            <th><span>Turno</span></th>
+            <th><span>Costo Aprox.</span></th>
+            <th><span>Ley Promedio</span></th>
+            <th><span>Estado</span></th>
+            <th><span></span></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="lalign"><input type="radio" value="" name="seleccion" class="seleccion" data-fecha="@item.Fecha.ToString("dd/MM/yyyy")" data-turno="@item.Turno"></td>
+                <td>@item.Fecha.ToString("dd/MM/yyyy")</td>
+                <td>@CoriPuno.Utilitario.Functions.obtenerTurno(item.Turno)</td>
+                <td>@item.CostoAproximado</td>
+                <td>@item.LeyPromedio</td>
+                <td>@CoriPuno.Utilitario.Functions.obtenerEstado(item.Estado)</td>
+                <td>
+                
+                    @if (item.Observado)
+                    {
+                        <button class="btn btn-primary btn-lista-observacion" data-fecha="@item.Fecha.ToString("dd/MM/yyyy")" data-turno="@item.Turno">Mostrar Observaciones</button>
+                    }
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+
+

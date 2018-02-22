@@ -1,0 +1,157 @@
+﻿@model CoriPuno.Entidad.LaborEntidad
+@{
+    ViewBag.Title = "Edicion";
+}
+
+<h1>@ViewBag.TituloPagina</h1>
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Código:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="hidden" name="Codigo_A" id="Codigo_A" value="@Model.Codigo">
+                        @Html.TextBoxFor(model => model.Codigo, new { @class = "form-control", @maxlength = "10", @readonly = "true" })
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Nombre:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.Descripcion, new { @class = "form-control", @maxlength = "50" })
+                    </div>
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Tipo Labor</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        @Html.DropDownListFor(model => model.Tipo, new List<SelectListItem> { new SelectListItem { Text = "Origen", Value = "OR" }, new SelectListItem { Text = "Destino", Value = "DE" } }, null, new { @class = "form-control" })
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Mina</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        @Html.DropDownListFor(model => model.Id_Mina, new SelectList(ViewBag.ListaMina, "Id_Mina", "Descripcion"), null, new { @class = "form-control" })
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Área:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        @Html.DropDownListFor(model => model.Id_Area, new SelectList(ViewBag.ListaArea, "Id_Area", "Descripcion"), null, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Zona:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        @Html.DropDownListFor(model => model.Id_Zona, new SelectList(ViewBag.ListaZona, "Id_Zona", "Descripcion"), null, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Fecha Ley:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.FechaLey, new { @class = "form-control", @maxlength = "10", @type = "date" })
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Ley:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="hidden" name="Ley_A" id="Codigo_A" value="@Model.Ley">
+                        @Html.TextBoxFor(model => model.Ley, new { @class = "form-control", @maxlength = "5" })
+                    </div>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Capacidad Máxima:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.Capacidad, new { @class = "form-control", @maxlength = "5" })
+                    </div>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">% Roca</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.PorRoca, new { @class = "form-control", @maxlength = "5" })
+                    </div>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Area Mano de Obra:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.AReaManiObra, new { @class = "form-control", @maxlength = "5" })
+                    </div>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Fecha Apertura:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.FechaApertura, new { @class = "form-control", @maxlength = "10", @type = "date" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-danger text-left" id="Message-Error">
+                <strong></strong>
+            </div>
+            <div class="alert alert-success text-left" id="Message-OK">
+                <strong></strong>
+            </div>
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-3">
+                    <input type="submit" id="btn-modificar" class="btn btn-primary" value="Grabar" />
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("Index","Labor")" class="btn btn-warning">Regresar</a>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+
+
+
+
+</div>
+
+@Scripts.Render("~/bundles/mantenimiento-labor")
+@Scripts.Render("~/bundles/script-layaout")

@@ -1,0 +1,54 @@
+﻿@model List<CoriPuno.Entidad.DistribucionEquiposEntidad>
+@{
+    ViewBag.Title = "_ViewProgramacionEquipos";
+}
+@if (Model != null && Model.Count > 0)
+{
+    <table id="keywords" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th><span>Fecha Ejecucion</span></th>
+                <th><span>Turno</span></th>
+                <th><span>Labor Origen</span></th>
+                <th><span>Labor Destino</span></th>
+                <th><span>Ubicacion Incial</span></th>
+                <th><span>Labor Trabajo</span></th>
+                <th><span>Equipo</span></th>
+                <th><span>Id. Equipo</span></th>
+                <th><span>Marca</span></th>
+                <th><span>Año</span></th>
+                <th><span>Hora Inicio</span></th>
+                <th><span>Total Horas Desplaz.</span></th>
+                <th><span>Total Horas Efectivas</span></th>
+                <th><span>Asignar Equipo</span></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Fecha.ToString("dd/MM/yyyy")</td>
+                    <td>@CoriPuno.Utilitario.Functions.obtenerTurno(item.Turno)</td>
+                    <td>@item.LaborOrigen</td>
+                    <td>@item.LaborDestino</td>
+                    <td>@item.UbicacionInicial</td>
+                    <td>@item.LaborTrabajo</td>
+                    <td>@item.Equipo</td>
+                    <td>@item.IdEquipo</td>
+                    <td>@item.Marca</td>
+                    <td>@item.AñoFabricacion</td>
+                    <td>@item.HoraInicio</td>
+                    <td>@item.TotalHorasDeplazadas</td>
+                    <td>@item.TotalHorasEfectivas</td>
+                    <td><a href="#" class="btn btn-primary btn-elegir" data-laboror="@item.LaborOrigen" data-laborde="@item.LaborDestino">Elegir</a></td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    
+    <input type="hidden" value="@ViewBag.CerrarProgramacion"  id="TagCerrar"/>
+}
+
+

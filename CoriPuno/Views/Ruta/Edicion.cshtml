@@ -1,0 +1,80 @@
+﻿@model CoriPuno.Entidad.RutaEntidad
+@{
+    ViewBag.Title = "Edicion";
+}
+<h1>@ViewBag.TituloPagina</h1>
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Origen:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.Origen, new { @class = "form-control", @maxlength = "50", @disabled = "true" })
+                        @Html.HiddenFor(model => model.IdRuta)
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Destino:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.Destino, new { @class = "form-control", @maxlength = "50", @disabled = "true" })
+                    </div>
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Distancia:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.Distancia, new { @class = "form-control", @maxlength = "50" })
+                    </div>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Factor Dificultad:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.Factor, new { @class = "form-control", @maxlength = "50" })
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="alert alert-danger text-left" id="Message-Error">
+                <strong></strong>
+            </div>
+            <div class="alert alert-success text-left" id="Message-OK">
+                <strong></strong>
+            </div>
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-3">
+                    <input type="submit" id="btn-modificar" class="btn btn-primary" value="Grabar" />
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("Index","Ruta")" class="btn btn-warning">Regresar</a>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+
+
+
+
+</div>
+
+@Scripts.Render("~/bundles/mantenimiento-ruta")
+@Scripts.Render("~/bundles/script-layaout")
+
+

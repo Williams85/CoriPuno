@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+<h1>Generación de Programación de Carguio</h1>
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Ley Mínima:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="LeyMinima" id="LeyMinima" placeholder="Ley Mínima" class="form-control" >
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Ley Máxima:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="LeyMaxima" id="LeyMaxima" placeholder="Ley Máxima" class="form-control" >
+                    </div>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Fecha Ejecución:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="date" name="FEjecucion" id="FEjecucion" placeholder="Fecha Ejecucion" class="form-control" >
+                    </div>
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Turno:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        <select name="Turno" id="Turno" class="form-control selectpicker">
+                            <option value="0001">Mañana</option>
+                            <option value="0002">Tarde</option>
+                            <option value="0003">Noche</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <input type="hidden" id="FechaPrograma" />
+            <input type="hidden" id="TurnoPrograma" />
+
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-6">
+                    <input type="submit" id="IdCalcular" class="btn btn-warning" value="Generar Programación" style="margin:0 auto;" data-cantidadorigen="@ViewBag.CantidadOrigen" data-cantidaddestino="@ViewBag.CantidadDestino" data-parametroorigen="@ViewBag.ParametroOrigen" data-parametrodestino="@ViewBag.ParametroDestino" />
+                </div>
+                @*<div class="col-md-3">
+                    <input type="submit" id="IdCerrar" class="btn btn-primary" value="Cerrar Programación" />
+                </div>*@
+                <label class="col-md-3 control-label"></label>
+            </div>
+            <div class="alert alert-danger" role="alert" id="alert_message"></div>
+        </fieldset>
+    </form>
+
+
+
+
+</div>
+<div id="ListadoProgramacion">
+
+</div>
+@Scripts.Render("~/bundles/prog-carguio")
+@Scripts.Render("~/bundles/script-layaout")

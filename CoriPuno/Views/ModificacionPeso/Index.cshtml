@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>@ViewBag.TituloPagina</h1>
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label left">Fecha:</label>
+                        <div class="col-md-6 inputGroupContainer">
+                            <div class="input-group">
+                                <input type="date" name="Fecha" id="Fecha" placeholder="Fecha" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Placa:</label>
+                        <div class="col-md-6 inputGroupContainer left">
+                            <div class="input-group">
+                                <select name="Placa" id="Placa" class="form-control selectpicker">
+                                    <option value="">Todos</option>
+                                    @foreach (var item in ViewBag.ListaVehiculos)
+                                    {
+                                        <option value="@item.Placa">@item.Placa</option>
+                                    }
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+
+            <div class="alert alert-danger" role="alert" id="Message-Error"></div>
+            <div class="alert alert-success" role="alert" id="Message-OK"></div>
+
+        </fieldset>
+    </form>
+
+
+
+
+</div>
+
+<div id="IdDetalleLabores">
+
+</div>
+
+<input type="hidden" id="ProgPlaca" name="ProgPlaca" />
+<input type="hidden" id="ProgFecha" name="ProgFecha" />
+<input type="hidden" id="ProgTurno" name="ProgTurno" />
+<input type="hidden" id="ProgLabor" name="ProgLabor" />
+<input type="hidden" id="ProgPesoNeto" name="ProgPesoNeto" />
+<input type="hidden" id="ProgPesoNeto_A" name="ProgPesoNeto_A" />
+
+@Scripts.Render("~/bundles/modificacion-peso")
+@Scripts.Render("~/bundles/script-layaout")

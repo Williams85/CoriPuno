@@ -1,0 +1,35 @@
+﻿@model List<CoriPuno.Entidad.ProgramacionDiariaEntidad>
+@{
+    ViewBag.Title = "_DetalleProgramacion";
+}
+
+@if (Model != null && Model.Count > 0)
+{
+    <table id="keywords" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th><span>Labor Origen</span></th>
+                <th><span>Labor Destino</span></th>
+                <th><span>Ley</span></th>
+                <th><span>Distancia</span></th>
+                <th><span>Cant. Minerales</span></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.LaborOrigen</td>
+                    <td>@item.LaborDestino</td>
+                    <td>@item.Ley</td>
+                    <td>@item.Distancia</td>
+                    <td>@item.ToneladasProcesar</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+}
+
+

@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/script-layaout")
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+    <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        <img src="@Url.Content("images/logo.png")" width="200">
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "Home")">Generación Carguio</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "CierreCarguio")">Cierre de Carguio</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "DistribucionMaquinaria")">Distribución Equipos</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "Labor")">Labores</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "Ruta")">Rutas</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "CapturaPeso")">Pesaje de Vehiculos</a>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("Index", "ModificacionPeso")">Modificación Pesos Vehiculos</a>
+                </li>
+
+
+
+
+                <li>
+                    <a href="#">Salir</a>
+                </li>
+            </ul>
+        </div>
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="MessagePopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Mensaje</h4>
+                </div>
+                <div class="modal-body" id="modalmsg-texto">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+</body>
+</html>

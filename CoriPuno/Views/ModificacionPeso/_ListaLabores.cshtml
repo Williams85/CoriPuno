@@ -1,0 +1,88 @@
+﻿@model List<CoriPuno.Entidad.ExtraccionBalanzaEntidad>
+@{
+    ViewBag.Title = "_ListaLabores";
+}
+
+@if (Model != null && Model.Count > 0)
+{
+    <table id="keywords" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th><span>Seleccionar</span></th>
+                <th><span>Labor Origen</span></th>
+                <th><span>Turno</span></th>
+                <th><span>Hora</span></th>
+                <th><span>Tara</span></th>
+                <th><span>Peso Registrado</span></th>
+                <th><span>Peso Neto</span></th> 
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><input type="radio" value="" name="seleccion-prog" class="seleccion-prog" data-labor="@item.IdLabor" data-turno="@item.Turno" data-pesoneto="@item.PesoNeto"></td>
+                    <td>@item.Labor_or</td>
+                    <td>@CoriPuno.Utilitario.Functions.obtenerTurno(item.Turno)</td>
+                    <td>@item.Hora_Pesaje</td>
+                    <td>@item.Tara</td>
+                    <td>@item.Peso</td>
+                    <td>@item.PesoNeto</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            
+                <div class="col-md-3">
+                    <label>Dice</label>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" id="DicePeso" style="width:50px;" disabled />
+                </div>
+                <div class="col-md-3">
+                    <label>Debe Decir:</label>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" id="DebeDecirPeso" style="width:50px;" disabled />
+                </div>
+
+ 
+        </div>
+        <div class="col-md-4">
+            <input type="submit" id="btn-modificar" class="btn btn-primary" disabled style="float:right;" value="Grabar Modificación" />
+        </div>
+        <div class="col-md-2"></div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8">
+            <textarea style="width:100%;margin-top:30px;" placeholder="Sustento de Cambio" id="Sustento"></textarea>
+            <div class="form-group">
+                <label class="col-md-4 control-label left">Autorizado por:</label>
+                <div class="col-md-8 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="date" name="Autoriza" id="Autoriza" style="width:100%;" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+
+    </div>
+}
+else
+{
+    <div class="NoDatos">
+        No hay información
+    </div>
+}
+

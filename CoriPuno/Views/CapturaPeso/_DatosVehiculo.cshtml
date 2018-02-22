@@ -1,0 +1,36 @@
+﻿@model CoriPuno.Entidad.VehiculoEntidad
+@{
+    ViewBag.Title = "_DatosVehiculo";
+}
+@if (Model != null)
+{
+    <table id="keywords" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th><span>Placa</span></th>
+                <th><span>Contrata</span></th>
+                <th><span>Tara</span></th>
+                <th><span>Peso</span></th>
+                <th><span>Peso Neto</span></th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Placa</td>
+                <td>@Model.Contrata</td>
+                <td>@Model.Tara</td>
+                <td>@Model.Peso</td>
+                <td>@Model.PesoNeto</td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="hidden" id="ProgPeso" name="ProgPeso" value="@Model.Peso" />
+    <input type="hidden" id="ProgPesoNeto" name="ProgPesoNeto" value="@Model.PesoNeto" />
+}
+else
+{
+    <div class="NoDatos">
+        No hay Vehículo
+    </div>
+}
+
+

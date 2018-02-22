@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h1>@ViewBag.TituloPagina</h1>
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Fecha:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="date" name="Fecha" id="Fecha" placeholder="Fecha" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Turno:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        <select name="Turno" id="Turno" class="form-control selectpicker">
+                            <option value="0001">Mañana</option>
+                            <option value="0002">Tarde</option>
+                            <option value="0003">Noche</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Placa:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="Placa" id="Placa" placeholder="Placa" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-6">
+                    <input type="submit" id="btn-capturar-peso" class="btn btn-primary" value="Capturar Peso" />
+                </div>
+                <label class="col-md-3 control-label"></label>
+            </div>
+            <div class="alert alert-danger" role="alert" id="Message-Error"></div>
+            <div class="alert alert-success" role="alert" id="Message-OK"></div>
+
+        </fieldset>
+    </form>
+
+
+
+
+</div>
+
+<input type="hidden" id="ProgPlaca" name="ProgPlaca" />
+<input type="hidden" id="ProgFecha" name="ProgFecha" />
+<input type="hidden" id="ProgTurno" name="ProgTurno" />
+<input type="hidden" id="ProgLabor" name="ProgLabor" />
+<input type="hidden" id="ProgLaborName" name="ProgLabor" />
+
+
+<div style="margin:0 auto;width:70%;">
+    <div id="IdVehiculo">
+
+    </div>
+    <div id="IdLabores">
+
+    </div>
+
+    <div id="IdLaborOrigen">
+
+    </div>
+</div>
+
+
+
+
+@Scripts.Render("~/bundles/captura-peso")
+@Scripts.Render("~/bundles/script-layaout")

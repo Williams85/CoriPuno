@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoriPuno.Presentacion", "CoriPuno\CoriPuno.Presentacion.csproj", "{47CD95B1-847D-4F54-A38C-9F6E5495F60C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoriPuno.Dominio", "CoriPuno.Dominio\CoriPuno.Dominio.csproj", "{C1023728-062D-44F5-9BEA-009C7A1C2096}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Capa Presentacion", "1. Capa Presentacion", "{72092AB3-CDFC-46BF-9100-6148E831209E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Capa Dominio", "2. Capa Dominio", "{C42A83B9-A564-48AD-9167-25C16C2BA7DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Capa Repositorio", "3. Capa Repositorio", "{FC47DA67-A6AC-45AC-8DD3-11F3EA5E5838}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Capa Transversal", "4. Capa Transversal", "{83B721D7-FD86-4905-A03D-8DC9D23D70AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoriPuno.Repositorio", "CoriPuno.Repositorio\CoriPuno.Repositorio.csproj", "{15A1EFBE-DD3B-4640-BE1D-2C1501AE2E5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoriPuno.Utilitario", "CoriPuno.Utilitario\CoriPuno.Utilitario.csproj", "{7120F698-F522-4B3F-A064-0C536EB67765}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoriPuno.Entidad", "CoriPuno.Entidad\CoriPuno.Entidad.csproj", "{80F5058F-6ECD-461E-B783-D2D16786EDE2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47CD95B1-847D-4F54-A38C-9F6E5495F60C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47CD95B1-847D-4F54-A38C-9F6E5495F60C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47CD95B1-847D-4F54-A38C-9F6E5495F60C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47CD95B1-847D-4F54-A38C-9F6E5495F60C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1023728-062D-44F5-9BEA-009C7A1C2096}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1023728-062D-44F5-9BEA-009C7A1C2096}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1023728-062D-44F5-9BEA-009C7A1C2096}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1023728-062D-44F5-9BEA-009C7A1C2096}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15A1EFBE-DD3B-4640-BE1D-2C1501AE2E5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15A1EFBE-DD3B-4640-BE1D-2C1501AE2E5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15A1EFBE-DD3B-4640-BE1D-2C1501AE2E5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15A1EFBE-DD3B-4640-BE1D-2C1501AE2E5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7120F698-F522-4B3F-A064-0C536EB67765}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7120F698-F522-4B3F-A064-0C536EB67765}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7120F698-F522-4B3F-A064-0C536EB67765}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7120F698-F522-4B3F-A064-0C536EB67765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80F5058F-6ECD-461E-B783-D2D16786EDE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80F5058F-6ECD-461E-B783-D2D16786EDE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80F5058F-6ECD-461E-B783-D2D16786EDE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80F5058F-6ECD-461E-B783-D2D16786EDE2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{47CD95B1-847D-4F54-A38C-9F6E5495F60C} = {72092AB3-CDFC-46BF-9100-6148E831209E}
+		{C1023728-062D-44F5-9BEA-009C7A1C2096} = {C42A83B9-A564-48AD-9167-25C16C2BA7DF}
+		{15A1EFBE-DD3B-4640-BE1D-2C1501AE2E5B} = {FC47DA67-A6AC-45AC-8DD3-11F3EA5E5838}
+		{7120F698-F522-4B3F-A064-0C536EB67765} = {83B721D7-FD86-4905-A03D-8DC9D23D70AF}
+		{80F5058F-6ECD-461E-B783-D2D16786EDE2} = {C42A83B9-A564-48AD-9167-25C16C2BA7DF}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>@ViewBag.TituloPagina</h1>
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Código:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="Codigo" id="Codigo" placeholder="Codigo" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Nombre:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="Descripcion" id="Descripcion" placeholder="Descripcion" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Tipo Labor:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        <select name="Tipo" id="Tipo" class="form-control selectpicker">
+                            <option value="" selected>Todos</option>
+                            <option value="OR">Origen</option>
+                            <option value="DE">Destino</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Estado:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        <select name="Estado" id="Estado" class="form-control selectpicker">
+                            <option value="" selected>Todos</option>
+                            <option value="A">Activas</option>
+                            <option value="X">Cerradas</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-3">
+                    <input type="submit" id="btn-buscar" class="btn btn-primary" value="Buscar" />
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("Nuevo","Labor")" class="btn btn-warning">Nuevo</a>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+
+
+
+
+</div>
+<div id="IdResultado">
+
+</div>
+@Scripts.Render("~/bundles/mantenimiento-labor")
+@Scripts.Render("~/bundles/script-layaout")
+

@@ -1,0 +1,45 @@
+﻿@model List<CoriPuno.Entidad.RutaEntidad>
+@{
+    ViewBag.Title = "_ResultadosBusqueda";
+}
+
+@if (Model != null && Model.Count > 0)
+{
+
+    <table id="keywords" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th><span>Id_Ruta</span></th>
+                <th><span>Origen</span></th>
+                <th><span>Destino</span></th>
+                <th><span>Distancia</span></th>
+                <th><span>Factor Dificultad</span></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <th scope="lalign">@item.IdRuta</th>
+                    <th scope="lalign">@item.IdOrigen - @item.Origen</th>
+                    <th scope="lalign">@item.IdDestino - @item.Destino</th>
+                    <td>@item.Distancia</td>
+                    <td>@item.Factor</td>
+                    <td>
+                        @using (Html.BeginForm("Edicion", "Ruta", FormMethod.Post, new { @role = "form" }))
+                        {
+                            <input type="hidden" id="Codigo" name="Codigo" value="@item.IdRuta" />
+                            <button type="submit" class="btn btn-primary btn-sm"><span class="separarboton glyphicon glyphicon-pencil"></span>Editar</button>
+                        }
+                    </td>
+                </tr>
+            }
+
+            
+        </tbody>
+    </table>
+
+}
+
