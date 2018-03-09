@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace CoriPuno.Controllers
 {
+    [Authentication]
     public class LaborController : Controller
     {
         // GET: Labor
@@ -73,8 +74,11 @@ namespace CoriPuno.Controllers
             if (ListaArea != null && ListaArea.Count > 0)
                 ListaZona = oZonaDominio.Listar(new AreaEntidad
                 {
-                    Id_Mina = oLaborEntidad.Id_Mina,
                     Id_Area = oLaborEntidad.Id_Area,
+                    Mina = new MinaEntidad
+                    {
+                        Id_Mina=oLaborEntidad.Id_Mina
+                    }
 
                 });
 

@@ -1,0 +1,71 @@
+﻿@model CoriPuno.Entidad.MinaEntidad
+@{
+    ViewBag.Title = @ViewBag.TituloPagina;
+}
+
+
+<h1>@ViewBag.TituloPagina</h1>
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+            @Html.HiddenFor(model => model.Id_Mina)
+            <!-- Text input-->
+            <div class="form-group">
+                <label for="Nom_Usuario" class="col-md-4 control-label">Descripcion:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.Descripcion, new { @class = "form-control", @maxlength = "20" })
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label for="Fec_Inicio" class="col-md-4 control-label">Fecha Inicio:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.Fec_Inicio, new { @class = "form-control", @maxlength = "10"})
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label for="Fec_Fin" class="col-md-4 control-label">Fecha Fin:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.Fec_Fin, new { @class = "form-control", @maxlength = "10"})
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-danger text-left" id="Message-Error">
+                <strong></strong>
+            </div>
+            <div class="alert alert-success text-left" id="Message-OK">
+                <strong></strong>
+            </div>
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-3">
+                    <input type="submit" id="btn-modificar" class="btn btn-primary" value="Grabar" />
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("Index","Mina")" class="btn btn-warning">Regresar</a>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+
+
+
+
+</div>
+@Scripts.Render("~/bundles/mantenimiento-mina")
+
+
+
+

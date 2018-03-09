@@ -9,7 +9,8 @@ namespace CoriPuno
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/jquery-ui-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -25,6 +26,7 @@ namespace CoriPuno
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/themes/base/jquery-ui.min.css",
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/script-layaout").Include(
@@ -48,6 +50,31 @@ namespace CoriPuno
             bundles.Add(new ScriptBundle("~/bundles/mantenimiento-ruta").Include(
                                   "~/Scripts/Controladores/Ruta/ruta-route.js",
                                   "~/Scripts/Controladores/Ruta/ruta-controller.js"));
+
+            //Mantenimiento de Usuarios
+            bundles.Add(new ScriptBundle("~/bundles/mantenimiento-usuario").Include(
+                                  "~/Scripts/Controladores/Usuario/usuario-route.js",
+                                  "~/Scripts/Controladores/Usuario/usuario-controller.js"));
+
+            //Mantenimiento de Minas
+            bundles.Add(new ScriptBundle("~/bundles/mantenimiento-mina").Include(
+                                  "~/Scripts/Controladores/Mina/mina-route.js",
+                                  "~/Scripts/Controladores/Mina/mina-controller.js"));
+
+            //Mantenimiento de Zonas
+            bundles.Add(new ScriptBundle("~/bundles/mantenimiento-zona").Include(
+                                  "~/Scripts/Controladores/Zona/zona-route.js",
+                                  "~/Scripts/Controladores/Zona/zona-controller.js"));
+
+            //Mantenimiento de Poligonos
+            bundles.Add(new ScriptBundle("~/bundles/mantenimiento-poligono").Include(
+                                  "~/Scripts/Controladores/Poligono/poligono-route.js",
+                                  "~/Scripts/Controladores/Poligono/poligono-controller.js"));
+
+            //Cambio de Clave
+            bundles.Add(new ScriptBundle("~/bundles/mantenimiento-cambio-clave").Include(
+                                  "~/Scripts/Controladores/CambioClave/cambio-clave-route.js",
+                                  "~/Scripts/Controladores/CambioClave/cambio-clave-controller.js"));
 
             //Revision de Carguio
             bundles.Add(new ScriptBundle("~/bundles/cierre-carguio").Include(

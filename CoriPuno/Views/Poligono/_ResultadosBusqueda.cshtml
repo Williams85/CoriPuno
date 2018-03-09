@@ -1,0 +1,43 @@
+﻿@model List<CoriPuno.Entidad.PoligonoEntidad>
+@{
+    ViewBag.Title = "_ResultadosBusqueda";
+}
+
+@if (Model != null && Model.Count > 0)
+{
+
+    <table id="keywords" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th><span>Poligono</span></th>
+                <th><span>Mina</span></th>
+                <th><span>Area</span></th>
+                <th><span>Zona</span></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>@item.Descripcion</th>
+                    <td>@item.Mina.Descripcion</td>
+                    <th>@item.Area.Descripcion</th>
+                    <th>@item.Zona.Descripcion</th>
+                    <td>
+                        @using (Html.BeginForm("Edicion", "Poligono", FormMethod.Post, new { @role = "form" }))
+                        {
+                            <input type="hidden" id="Codigo" name="Codigo" value="@item.Id_Poligono" />
+                            <button type="submit" class="btn btn-primary btn-sm"><span class="separarboton glyphicon glyphicon-pencil"></span>Editar</button>
+                        }
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+

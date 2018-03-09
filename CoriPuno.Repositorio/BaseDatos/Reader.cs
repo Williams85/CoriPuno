@@ -105,7 +105,17 @@ namespace CoriPuno.Repositorio.BaseDatos
             }
             catch { throw; }
         }
-        public static bool? GetBooleanValue(IDataReader dr, string column)
+        public static bool GetBooleanValue(IDataReader dr, string column)
+        {
+            try
+            {
+                var obj = GetObjectValue(dr, column);
+                if (obj == null) return false;
+                return Convert.ToBoolean(obj);
+            }
+            catch { throw; }
+        }
+        public static bool? GetBooleanNullValue(IDataReader dr, string column)
         {
             try
             {
@@ -115,5 +125,6 @@ namespace CoriPuno.Repositorio.BaseDatos
             }
             catch { throw; }
         }
+
     }
 }

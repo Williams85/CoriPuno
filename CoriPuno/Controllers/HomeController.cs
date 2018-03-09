@@ -1,18 +1,15 @@
-﻿using CoriPuno.Data;
-using CoriPuno.Dominio;
+﻿using CoriPuno.Dominio;
 using CoriPuno.Entidad;
-using CoriPuno.Models;
 using CoriPuno.Utilitario;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace CoriPuno.Controllers
 {
     public class HomeController : Controller
     {
+        [Authentication]
         public ActionResult Index()
         {
             ParametrosDominio oParametrosDominio = new ParametrosDominio();
@@ -72,6 +69,68 @@ namespace CoriPuno.Controllers
             return Json(resultado);
         }
 
+        [HttpPost]
+        public ActionResult Login(string Nom_Usuario, string Pass_Usuario)
+        {
+            if (ModelState.IsValid && ((Nom_Usuario != null || Nom_Usuario != "") || (Pass_Usuario != null || Pass_Usuario != "")))
+            {
+                UsuarioDominio oUsuarioDominio = new UsuarioDominio();
+                var entidad = oUsuarioDominio.validarUsuario(new UsuarioEntidad
+                {
+                    Nom_Usuario = Nom_Usuario,
+                    Pass_Usuario = Functions.Encriptar(Pass_Usuario),
+
+                });
+                if (entidad != null)
+                {
+                    FormsAuthentication.SetAuthCookie(Nom_Usuario, false);
+                    SessionManager.Usuario = entidad;
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                    return Redirect("~/Login/Login.aspx");
+
+            }
+            else
+                return Redirect("~/Login/Login.aspx");
+        }
+
+        [HttpPost]
+        public ActionResult ValidarLogin(string Nom_Usuario, string Pass_Usuario)
+        {
+            ResponseWeb oResponseWeb = new ResponseWeb() { Message = Message.MsgErrUserPassword, Estado = false };
+            if (ModelState.IsValid && ((Nom_Usuario != null || Nom_Usuario != "") || (Pass_Usuario != null || Pass_Usuario != "")))
+            {
+                UsuarioDominio oUsuarioDominio = new UsuarioDominio();
+                var entidad = oUsuarioDominio.validarUsuario(new UsuarioEntidad
+                {
+                    Nom_Usuario = Nom_Usuario,
+                    Pass_Usuario = Functions.Encriptar(Pass_Usuario),
+
+                });
+                if (entidad != null && (entidad.ListaPerfilNavegacion != null && entidad.ListaPerfilNavegacion.Count > 0) 
+                    && (entidad.ListaPerfilNavegacion[0].ListaPerfilNavegacionOpcion != null && entidad.ListaPerfilNavegacion[0].ListaPerfilNavegacionOpcion.Count > 0))
+                    oResponseWeb.Estado = true;
+                else
+                    oResponseWeb.Message = Message.MsgErrUserPassword;
+            }
+            else
+                oResponseWeb.Message = Message.MsgErrUserPassword;
+
+            return Json(oResponseWeb);
+        }
+
+        public ActionResult Autenticar()
+        {
+            return Redirect("~/Login/Login.aspx");
+        }
+
+        [Authentication]
+        public ActionResult End()
+        {
+            Session.Abandon();
+            return Redirect("~/Login/Login.aspx");
+        }
 
         public ActionResult About()
         {

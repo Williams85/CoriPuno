@@ -1,0 +1,106 @@
+﻿@model CoriPuno.Entidad.ZonaEntidad
+@{
+    ViewBag.Title = "Edicion";
+}
+
+
+<h1>@ViewBag.TituloPagina</h1>
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+            @Html.HiddenFor(model => model.Id_Zona)
+            <!-- Text input-->
+            <div class="form-group">
+                <label for="Descripcion" class="col-md-4 control-label">Descripcion:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.Descripcion, new { @class = "form-control", @maxlength = "20" })
+                    </div>
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label for="Id_Mina" class="col-md-4 control-label">Mina:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        @Html.DropDownListFor(model => model.Mina.Id_Mina, new SelectList(ViewBag.ListaMinas, "Id_Mina", "Descripcion"), "Seleccionar", new { @class = "form-control" })
+
+                    </div>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label for="Id_Area" class="col-md-4 control-label">Area:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        @Html.DropDownListFor(model => model.Area.Id_Area, new SelectList(ViewBag.ListaAreas, "Id_Area", "Descripcion"), "Seleccionar", new { @class = "form-control" })
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Descripcion" class="col-md-4 control-label">Fecha Inicio:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.Fec_Inicio, new { @class = "form-control", @maxlength = "20", @readonly = "true" })
+                    </div>
+                </div>
+            </div>
+
+            <!-- Check input-->
+            <div class="form-group">
+                <span>
+                    <label class="col-md-4 control-label">Activo</label>
+                    <div class="col-md-4 selectContainer">
+                        <div class="input-group">
+                            @if (Model.Estado == "1")
+                            {
+                                <input type="checkbox" id="Estado" name="Estado" checked />
+                            }
+                            else
+                            {
+                                <input type="checkbox" id="Estado" name="Estado" />
+                            }
+                        </div>
+                    </div>
+
+                </span>
+            </div>
+
+            <div class="alert alert-danger text-left" id="Message-Error">
+                <strong></strong>
+            </div>
+            <div class="alert alert-success text-left" id="Message-OK">
+                <strong></strong>
+            </div>
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-3">
+                    <input type="submit" id="btn-modificar" class="btn btn-primary" value="Grabar" />
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("Index","Zona")" class="btn btn-warning">Regresar</a>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+
+
+
+
+</div>
+
+@Scripts.Render("~/bundles/mantenimiento-zona")
+
+
+
+
+
+
+
+

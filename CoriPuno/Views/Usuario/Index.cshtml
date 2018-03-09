@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h1>@ViewBag.TituloPagina</h1>
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Usuario:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="Nom_Usuario" id="Nom_Usuario" placeholder="Usuario" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Perfil:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.DropDownList("Id_Perfil", new SelectList(ViewBag.ListaPerfiles, "Id_Perfil", "Nom_Perfil"), "Seleccionar", new { @class = "form-control" })
+                    </div>
+                </div>
+                
+            </div>
+
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-3">
+                    <input type="submit" id="btn-buscar" class="btn btn-primary" value="Buscar" />
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("Nuevo","Usuario")" class="btn btn-warning">Nuevo</a>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+
+
+
+
+</div>
+<div id="IdResultado">
+
+</div>
+@Scripts.Render("~/bundles/mantenimiento-usuario")
+

@@ -4,11 +4,31 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
- body {
+body {
     overflow-x: hidden;
- }
+}
 
 /* Toggle Styles */
+
+#contenedor-login {
+    background: #4D4D4D;
+    border-radius: 10px;
+    margin: 200px auto 0 auto;
+    padding: 10px;
+    width: 300px;
+}
+
+    #contenedor-login img {
+        display: block;
+        margin: 10px auto 20px auto;
+    }
+
+    #contenedor-login input, #contenedor-login button, #contenedor-login #Message-Error {
+        border: none;
+        margin-top: 5px;
+        padding: 5px;
+        width: 100%;
+    }
 
 #wrapper {
     padding-left: 0;
@@ -18,9 +38,9 @@
     transition: all 0.5s ease;
 }
 
-#wrapper.toggled {
-    padding-left: 250px;
-}
+    #wrapper.toggled {
+        padding-left: 250px;
+    }
 
 #sidebar-wrapper {
     z-index: 1000;
@@ -52,11 +72,35 @@
     margin-right: -250px;
 }
 
+.block-user {
+    background: #7C7C7C;
+    border-radius: 0 0px 5px 5px;
+    overflow: hidden;
+    padding: 10px;
+    width: 100%;
+}
+
+.block-user .view-user {
+    color:#FBF497;
+    float:right;
+    font-weight:bold;
+}
+
+.block-user .view-user a{
+    color:#FFF;
+    font-weight:normal;
+    margin-left:10px;
+}
+
+.container {
+    max-width: 100% !important;
+}
+
 .form-horizontal select {
     width: 170px !important;
 }
 
-.NoDatos{
+.NoDatos {
     background: #2789b0;
     border-radius: 10px;
     color: #fff;
@@ -64,7 +108,7 @@
     margin: 0 auto 60px auto;
     padding: 30px;
     text-align: center;
-    width: 100%;   
+    width: 100%;
 }
 
 /* Sidebar Styles */
@@ -78,41 +122,46 @@
     list-style: none;
 }
 
-.sidebar-nav li {
-    text-indent: 20px;
-    line-height: 40px;
-}
+    .sidebar-nav li {
+        text-indent: 20px;
+        line-height: 40px;
+    }
 
-.sidebar-nav li a {
-    display: block;
-    text-decoration: none;
-    color: #999999;
-}
+        .sidebar-nav li a {
+            display: block;
+            text-decoration: none;
+            color: #999999;
+        }
 
-.sidebar-nav li a:hover {
-    text-decoration: none;
-    color: #fff;
-    background: rgba(255,255,255,0.2);
-}
+            .sidebar-nav li a:hover {
+                text-decoration: none;
+                color: #fff;
+                background: rgba(255,255,255,0.2);
+            }
 
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
-    text-decoration: none;
-}
+            .sidebar-nav li a:active,
+            .sidebar-nav li a:focus {
+                text-decoration: none;
+            }
 
-.sidebar-nav > .sidebar-brand {
-    height: 65px;
-    font-size: 18px;
-    line-height: 60px;
-}
+    .sidebar-nav > .sidebar-brand {
+        height: 65px;
+        font-size: 18px;
+        line-height: 60px;
+    }
 
-.sidebar-nav > .sidebar-brand a {
-    color: #999999;
-}
+        .sidebar-nav > .sidebar-brand a {
+            color: #999999;
+        }
 
-.sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
-    background: none;
+            .sidebar-nav > .sidebar-brand a:hover {
+                color: #fff;
+                background: none;
+            }
+
+.subnavegador li{
+    list-style:none;
+    margin-left:-25px;
 }
 
 @media(min-width:768px) {
@@ -120,9 +169,9 @@
         padding-left: 250px;
     }
 
-    #wrapper.toggled {
-        padding-left: 0;
-    }
+        #wrapper.toggled {
+            padding-left: 0;
+        }
 
     #sidebar-wrapper {
         width: 250px;
@@ -133,7 +182,7 @@
     }
 
     #page-content-wrapper {
-        padding: 20px;
+        padding: 0px 20px 20px 20px;
         position: relative;
     }
 
@@ -150,60 +199,73 @@
 
 
 
-h1 { 
-  font-family: 'Amarante', Tahoma, sans-serif;
-  font-weight: bold;
-  font-size: 2.6em;
-  line-height: 1.7em;
-  margin-bottom: 10px;
-  text-align: center;
+h1 {
+    font-family: 'Amarante', Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 2.6em;
+    line-height: 1.7em;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 
 #keywords {
-  margin: 0 auto;
-  font-size: 1.2rem;
-  margin-bottom: 15px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
 }
 
 
-#keywords thead {
-  cursor: pointer;
-  background: #c9dff0;
-}
-#keywords thead tr th { 
-  font-weight: bold;
-  padding: 12px 10px;
-}
-#keywords thead tr th span { 
-  padding-right: 20px;
-  background-repeat: no-repeat;
-  background-position: 100% 100%;
+    #keywords thead {
+        cursor: pointer;
+        background: #c9dff0;
+    }
+
+        #keywords thead tr th {
+            font-weight: bold;
+            padding: 12px 10px;
+        }
+
+            #keywords thead tr th span {
+                padding-right: 20px;
+                background-repeat: no-repeat;
+                background-position: 100% 100%;
+            }
+
+            #keywords thead tr th.headerSortUp, #keywords thead tr th.headerSortDown {
+                background: #acc8dd;
+            }
+
+                #keywords thead tr th.headerSortUp span {
+                    background-image: url('http://i.imgur.com/SP99ZPJ.png');
+                }
+
+                #keywords thead tr th.headerSortDown span {
+                    background-image: url('http://i.imgur.com/RkA9MBo.png');
+                }
+
+
+    #keywords tbody tr {
+        color: #555;
+    }
+
+        #keywords tbody tr td {
+            text-align: center;
+            padding: 15px 10px;
+        }
+
+            #keywords tbody tr td.lalign {
+                text-align: left;
+            }
+
+#success_message {
+    display: none;
 }
 
-#keywords thead tr th.headerSortUp, #keywords thead tr th.headerSortDown {
-  background: #acc8dd;
+#danger_message {
+    display: none;
 }
 
-#keywords thead tr th.headerSortUp span {
-  background-image: url('http://i.imgur.com/SP99ZPJ.png');
+#alert_message {
+    display: none;
 }
-#keywords thead tr th.headerSortDown span {
-  background-image: url('http://i.imgur.com/RkA9MBo.png');
-}
-
-
-#keywords tbody tr { 
-  color: #555;
-}
-#keywords tbody tr td {
-  text-align: center;
-  padding: 15px 10px;
-}
-#keywords tbody tr td.lalign {
-  text-align: left;
-}
-
-#success_message{ display: none;}
-#danger_message{ display: none;}
-#alert_message{ display: none;}

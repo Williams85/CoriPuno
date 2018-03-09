@@ -8,7 +8,10 @@ namespace CoriPuno.Entidad
 {
     public class MinaEntidad
     {
-        public byte Id_Mina { get; set; }
+        public int Id_Mina { get; set; }
         public string Descripcion { get; set; }
+        public string Fec_Inicio { get; set; }
+        public string Fec_Fin { get; set; }
+
     }
 }

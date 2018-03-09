@@ -1,0 +1,39 @@
+﻿@model List<CoriPuno.Entidad.MinaEntidad>
+@{
+    ViewBag.Title = "_ResultadosBusqueda";
+}
+
+               @if (Model != null && Model.Count > 0)
+               {
+
+                   <table id="keywords" cellspacing="0" cellpadding="0">
+                       <thead>
+                           <tr>
+                               <th><span>Mina</span></th>
+                               <th><span>Fecha Inicio</span></th>
+                               <th><span>Fecha Fin</span></th>
+                               <th></th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                           @foreach (var item in Model)
+                           {
+                               <tr>
+                                   <th>@item.Descripcion</th>
+                                   <th>@item.Fec_Inicio</th>
+                                   <td>@item.Fec_Fin</td>
+                                   <td>
+                                       @using (Html.BeginForm("Edicion", "Mina", FormMethod.Post, new { @role = "form" }))
+                                       {
+                                           <input type="hidden" id="Codigo" name="Codigo" value="@item.Id_Mina" />
+                                           <button type="submit" class="btn btn-primary btn-sm"><span class="separarboton glyphicon glyphicon-pencil"></span>Editar</button>
+                                       }
+                                   </td>
+
+                               </tr>
+                           }
+                       </tbody>
+                   </table>
+               }
+
+

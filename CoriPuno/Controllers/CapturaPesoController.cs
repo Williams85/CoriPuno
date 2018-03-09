@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace CoriPuno.Controllers
 {
+        [Authentication]
     public class CapturaPesoController : Controller
     {
         // GET: CapturaPeso

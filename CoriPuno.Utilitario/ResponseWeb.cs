@@ -10,5 +10,6 @@ namespace CoriPuno.Utilitario
     {
         public bool Estado { get; set; }
         public string Message { get; set; }
+        public string UrlRedirect { get; set; }
     }
 }

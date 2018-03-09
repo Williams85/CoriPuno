@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Nuevo";
+}
+
+<h1>@ViewBag.TituloPagina</h1>
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+            <!-- Text input-->
+            <div class="form-group">
+                <label for="Nom_Usuario" class="col-md-4 control-label">Usuario:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="Nom_Usuario" id="Nom_Usuario" placeholder="Usuario" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label for="Pass_Usuario" class="col-md-4 control-label">Password:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="password" name="Pass_Usuario" id="Pass_Usuario" placeholder="Password" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label for="Perfil_Usuario" class="col-md-4 control-label">Perfil Usuario:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="Perfil_Usuario" id="Perfil_Usuario" placeholder="Perfil Usuario" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label for="Perfil_Id_Perfil" class="col-md-4 control-label">Perfil Acceso:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        @Html.DropDownList("Id_Perfil", new SelectList(ViewBag.ListaPerfiles, "Id_Perfil", "Nom_Perfil"), "Seleccionar", new { @class = "form-control" })
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="alert alert-danger text-left" id="Message-Error">
+                <strong></strong>
+            </div>
+            <div class="alert alert-success text-left" id="Message-OK">
+                <strong></strong>
+            </div>
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-3">
+                    <input type="submit" id="btn-grabar" class="btn btn-primary" value="Grabar" />
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("Index","Usuario")" class="btn btn-warning">Regresar</a>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+
+
+
+
+</div>
+
+@Scripts.Render("~/bundles/mantenimiento-usuario")
+
+
+
+
+

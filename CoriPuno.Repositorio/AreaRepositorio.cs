@@ -28,7 +28,10 @@ namespace CoriPuno.Repositorio
                     {
                         AreaEntidad oAreaEntidad = new AreaEntidad();
                         oAreaEntidad.Id_Area = Reader.GetTinyIntValue(reader, "Id_Area");
-                        oAreaEntidad.Id_Mina = Reader.GetTinyIntValue(reader, "Id_Mina");
+                        oAreaEntidad.Mina = new MinaEntidad
+                        {
+                            Id_Mina = Reader.GetIntValue(reader, "Id_Mina")
+                        };
                         oAreaEntidad.Descripcion = Reader.GetStringValue(reader, "cDescripcion");
                         ListaArea.Add(oAreaEntidad);
                     }

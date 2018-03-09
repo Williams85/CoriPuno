@@ -1,0 +1,96 @@
+﻿@model CoriPuno.Entidad.UsuarioEntidad
+@{
+    ViewBag.Title = "Edicion";
+}
+
+<h1>@ViewBag.TituloPagina</h1>
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+            @Html.HiddenFor(model => model.Id_Usuario)
+            <!-- Text input-->
+            <div class="form-group">
+                <label for="Nom_Usuario" class="col-md-4 control-label">Usuario:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.Nom_Usuario, new { @class = "form-control", @maxlength = "50" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Pass_Usuario" class="col-md-4 control-label">Password:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="password" id="Pass_Usuario" name="Pass_Usuario" maxlength="50" class="form-control" value="@CoriPuno.Utilitario.Functions.Desencriptar(Model.Pass_Usuario)" />
+                        <input type="hidden" id="Clave" name="Clave" value="@CoriPuno.Utilitario.Functions.Desencriptar(Model.Pass_Usuario)" />
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Perfil_Usuario" class="col-md-4 control-label">Perfil Usuario:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.Perfil_Usuario, new { @class = "form-control", @maxlength = "250" })
+                    </div>
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label for="Perfil_Id_Perfil" class="col-md-4 control-label">Perfil Acceso</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        @Html.DropDownListFor(model => model.Perfil.Id_Perfil, new SelectList(ViewBag.ListaPerfiles, "Id_Perfil", "Nom_Perfil"), "Seleccionar", new { @class = "form-control" })
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Check input-->
+            <div class="form-group">
+                <span>
+                    <label class="col-md-4 control-label">Activo</label>
+                    <div class="col-md-4 selectContainer">
+                        <div class="input-group">
+                            @if (Model.Activo == true)
+                            {
+                                <input type="checkbox" id="Activo" name="Activo" checked />
+                            }
+                            else
+                            {
+                                <input type="checkbox" id="Activo" name="Activo" />
+                            }
+                        </div>
+                    </div>
+
+                </span>
+            </div>
+
+            <div class="alert alert-danger text-left" id="Message-Error">
+                <strong></strong>
+            </div>
+            <div class="alert alert-success text-left" id="Message-OK">
+                <strong></strong>
+            </div>
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-3">
+                    <input type="submit" id="btn-modificar" class="btn btn-primary" value="Grabar" />
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("Index","Usuario")" class="btn btn-warning">Regresar</a>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+
+
+
+
+</div>
+@Scripts.Render("~/bundles/mantenimiento-usuario")
+

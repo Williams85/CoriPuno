@@ -14,44 +14,31 @@
 <body>
     <div id="wrapper">
         <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
+            <ul class="navegador sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                        <img src="@Url.Content("images/logo.png")" width="200">
+                        <img src="@Url.Content("/images/logo.png")" width="200">
                     </a>
                 </li>
-                <li>
-                    <a href="@Url.Action("Index", "Home")">Generación Carguio</a>
-                </li>
-                <li>
-                    <a href="@Url.Action("Index", "CierreCarguio")">Cierre de Carguio</a>
-                </li>
-                <li>
-                    <a href="@Url.Action("Index", "DistribucionMaquinaria")">Distribución Equipos</a>
-                </li>
-                <li>
-                    <a href="@Url.Action("Index", "Labor")">Labores</a>
-                </li>
-                <li>
-                    <a href="@Url.Action("Index", "Ruta")">Rutas</a>
-                </li>
-                <li>
-                    <a href="@Url.Action("Index", "CapturaPeso")">Pesaje de Vehiculos</a>
-                </li>
-
-                <li>
-                    <a href="@Url.Action("Index", "ModificacionPeso")">Modificación Pesos Vehiculos</a>
-                </li>
-
-
-
-
-                <li>
-                    <a href="#">Salir</a>
-                </li>
+                @foreach (var entidad in SessionManager.Usuario.ListaPerfilNavegacion)
+                {
+                    <li>
+                        <a href="#" class="desplegable" title="@entidad.Paquete.Nom_Paquete">@entidad.Paquete.Nom_Paquete</a>
+                        <ul class="subnavegador">
+                            @foreach (var objeto in entidad.ListaPerfilNavegacionOpcion)
+                            {
+                                <li><a href="@Url.Action("Index", @objeto.Pagina.Url_Pagina)">@objeto.Pagina.Nom_Pagina</a></li>
+                            }
+                        </ul>
+                    </li>
+                }
             </ul>
+
         </div>
         <div id="page-content-wrapper">
+            <div class="block-user">
+                <span class="view-user">@SessionManager.Usuario.Perfil_Usuario <a href="/Home/End">Cerrar Session</a></span>
+            </div>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
@@ -78,10 +65,20 @@
         </div>
     </div>
     <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
+        //$("#menu-toggle").click(function(e) {
+        //    e.preventDefault();
+        //    $("#wrapper").toggleClass("toggled");
+        //});
+
+        $(document).ready(function () { // Script del Navegador
+            $("ul.subnavegador").not('.selected').hide();
+            $("a.desplegable").click(function (e) {
+                var desplegable = $(this).parent().find("ul.subnavegador");
+                $('.desplegable').parent().find("ul.subnavegador").not(desplegable).slideUp('slow');
+                desplegable.slideToggle('slow');
+                e.preventDefault();
+            })
+        });
     </script>
 </body>
 </html>

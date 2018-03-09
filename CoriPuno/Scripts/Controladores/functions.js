@@ -1,4 +1,23 @@
-﻿function DisposeEvent(objeto) {
+﻿$.datepicker.regional['es'] = {
+    closeText: 'Cerrar',
+    prevText: '<Ant',
+    nextText: 'Sig>',
+    currentText: 'Hoy',
+    monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+    monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+    dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+    dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+    dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+    weekHeader: 'Sm',
+    dateFormat: 'dd/mm/yy',
+    firstDay: 1,
+    isRTL: false,
+    showMonthAfterYear: false,
+    yearSuffix: ''
+};
+$.datepicker.setDefaults($.datepicker.regional['es']);
+
+function DisposeEvent(objeto) {
     $(objeto).off();
 }
 
@@ -57,6 +76,51 @@ var Constantes = {
         Parrafo: "^[0-9A-ZÑa-zñÁÉÍÓÚáéíóú&.,#/' ]+$",
     },
     Message: {
+
+
+        //Login
+        FaltaUsuario: "Falta usuario",
+        FaltaPassword: "Falta clave",
+        ErrUserPass: "No se pudo validar credenciales.",
+
+        //Mensaje Mantenimiento Poligonos
+        FaltaPoligono: "Ingresar la descripcion",
+        FaltaMinaPoligono: "Ingresar la mina",
+        FaltaAreaPoligono: "Ingresar el area",
+        FaltaZonaPoligono: "Ingresar la zona",
+        ErrorPoligono: "Poligono incorrecto",
+
+        //Mensaje Mantenimiento Zonas
+        FaltaZona: "Ingresar la descripcion",
+        FaltaMinaZona: "Ingresar la mina",
+        FaltaAreaZona: "Ingresar el area",
+        FaltaFechaInicioZona: "Ingresar la fecha de inicio",
+        ErrorZona: "Mina incorrecto",
+
+        //Mensaje Mantenimiento Mina
+        FaltaMina: "Ingresar la descripcion",
+        FaltaFechaInicioMina: "Ingresar la fecha de inicio",
+        FaltaFechaFinMina: "Ingresar la fecha de fin",
+        ErrorMina: "Mina incorrecto",
+
+        //Mensaje Mantenimiento Usuario
+        FaltaUsuario: "Ingresar el usuario",
+        FaltaPassword: "Ingresar el password",
+        FaltaPerfilUsuario: "Ingresar el perfil del usuario",
+        FaltaPerfilAcceso: "Ingresar el perfil de acceso",
+        ErrorUsuario: "Usuario incorrecto",
+        ErrorPerfilUsuario: "Perfil del usuario incorrecto",
+
+        //Mensaje de Cambio Clave
+        FaltaClaveActual: "Ingresar la clave actual...",
+        FaltaClaveNueva: "Ingresar la nueva clave...",
+        FaltaClaveNuevaConfirmada: "Ingresar la confirmación de la nueva clave...",
+        ErrorClaveActual: "La clave actual ingresada no es correcta...",
+        ErrorDifClaveActual: "La clave actual y nueva deben ser diferentes...",
+        ErrorIgualClaveNueva: "La clave nueva y clave nueva confirmada son diferentes...",
+        NoCambioClave: "No se cambio la clave...",
+        CambioClave: "Se cambio la clave...",
+
         //Mensaje Mantenimiento Labores
         FaltaCodigoLabor: "Ingresar el codigo de la labor.",
         FaltaDescripcionLabor: "Ingresar el nombre de la labor.",
