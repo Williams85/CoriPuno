@@ -43,19 +43,30 @@
     <Compile Include="Base\ProgramacionDiariaEntidad.cs" />
     <Compile Include="Base\ProgramacionDiariaCabEntidad.cs" />
     <Compile Include="Base\DistribucionEquiposEntidad.cs" />
+    <Compile Include="Base\ComponenteEntidad.cs" />
+    <Compile Include="ContrataEntidad.cs" />
     <Compile Include="EquipoEntidad.cs" />
     <Compile Include="Base\LaborEntidad.cs" />
     <Compile Include="ExtraccionBalanzaEntidad.cs" />
     <Compile Include="LaborEntidad.cs" />
     <Compile Include="Base\MinaEntidad.cs" />
     <Compile Include="Base\PoligonoEntidad.cs" />
+    <Compile Include="Base\PaginaEntidad.cs" />
+    <Compile Include="Base\PaqueteEntidad.cs" />
     <Compile Include="ParametrosEntidad.cs" />
+    <Compile Include="Base\PerfilEntidad.cs" />
+    <Compile Include="Base\PerfilNavegacionEntidad.cs" />
+    <Compile Include="Base\PerfilNavegacionOpcionEntidad.cs" />
+    <Compile Include="PerfilNavegacionEntidad.cs" />
     <Compile Include="ProgramacionDiariaCabEntidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Base\RutaEntidad.cs" />
     <Compile Include="RechazoProgramacionEntidad.cs" />
     <Compile Include="RutaEntidad.cs" />
     <Compile Include="Base\ZonaEntidad.cs" />
+    <Compile Include="Base\UsuarioEntidad.cs" />
+    <Compile Include="UsuarioEntidad.cs" />
+    <Compile Include="Base\VehiculoEntidad.cs" />
     <Compile Include="VehiculoEntidad.cs" />
   </ItemGroup>
   <ItemGroup />

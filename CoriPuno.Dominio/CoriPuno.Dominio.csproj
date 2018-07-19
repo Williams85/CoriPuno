@@ -40,18 +40,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaDominio.cs" />
+    <Compile Include="ComponenteDominio.cs" />
+    <Compile Include="ContrataDominio.cs" />
     <Compile Include="DistribucionEquiposDominio.cs" />
     <Compile Include="EquipoDominio.cs" />
     <Compile Include="ExtraccionBalanzaDominio.cs" />
     <Compile Include="LaborDominio.cs" />
     <Compile Include="MinaDominio.cs" />
     <Compile Include="ParametrosDominio.cs" />
+    <Compile Include="PerfilDominio.cs" />
     <Compile Include="PoligonoDominio.cs" />
     <Compile Include="ProgramacionDiariaCabDominio.cs" />
     <Compile Include="ProgramacionDiariaDominio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RechazoProgramacionDominio.cs" />
     <Compile Include="RutaDominio.cs" />
+    <Compile Include="UsuarioDominio.cs" />
     <Compile Include="VehiculoDominio.cs" />
     <Compile Include="ZonaDominio.cs" />
   </ItemGroup>

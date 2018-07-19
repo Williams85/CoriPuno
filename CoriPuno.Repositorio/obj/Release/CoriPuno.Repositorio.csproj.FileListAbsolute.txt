@@ -1,0 +1,9 @@
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Repositorio\bin\Release\CoriPuno.Repositorio.dll
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Repositorio\bin\Release\CoriPuno.Repositorio.pdb
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Repositorio\bin\Release\CoriPuno.Entidad.dll
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Repositorio\bin\Release\CoriPuno.Utilitario.dll
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Repositorio\bin\Release\CoriPuno.Entidad.pdb
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Repositorio\bin\Release\CoriPuno.Utilitario.pdb
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Repositorio\obj\Release\CoriPuno.Repositorio.csprojResolveAssemblyReference.cache
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Repositorio\obj\Release\CoriPuno.Repositorio.dll
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Repositorio\obj\Release\CoriPuno.Repositorio.pdb

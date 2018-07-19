@@ -1,0 +1,88 @@
+﻿@model CoriPuno.Entidad.VehiculoEntidad
+@{
+    ViewBag.Title = "Edicion";
+}
+
+<h1>@ViewBag.TituloPagina</h1>
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+            @Html.HiddenFor(model => model.IdVehiculo)
+            <!-- Text input-->
+            <div class="form-group">
+                <label for="Placa" class="col-md-4 control-label">Placa:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.Placa, new { @class = "form-control", @maxlength = "10" })
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Text input-->
+            <div class="form-group">
+                <label for="Tara" class="col-md-4 control-label">Tara:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.Tara, new { @class = "form-control", @maxlength = "5" })
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Text input-->
+            <div class="form-group">
+                <label for="Capacidad" class="col-md-4 control-label">Capacidad:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.Capacidad, new { @class = "form-control", @maxlength = "5" })
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Text input-->
+            <div class="form-group">
+                <label for="Contrata" class="col-md-4 control-label">Contrata:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">                       
+                        @Html.DropDownListFor(model => model.Contrata, new SelectList(ViewBag.ListaContrata, "Id_Contrata", "Razon_Social"), null, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label for="Marca" class="col-md-4 control-label">Marca:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.Marca, new { @class = "form-control", @maxlength = "10" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-danger text-left" id="Message-Error">
+                <strong></strong>
+            </div>
+            <div class="alert alert-success text-left" id="Message-OK">
+                <strong></strong>
+            </div>
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-3">
+                    <input type="submit" id="btn-modificar" class="btn btn-primary" value="Grabar" />
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("Index","Vehiculo")" class="btn btn-warning">Regresar</a>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+
+
+
+
+</div>
+
+@Scripts.Render("~/bundles/mantenimiento-vehiculo")
+

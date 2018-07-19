@@ -111,7 +111,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Bussines\Logica.cs" />
+    <Compile Include="Controllers\ComponenteController.cs" />
+    <Compile Include="Controllers\MinaController.cs" />
+    <Compile Include="Controllers\PoligonoController.cs" />
+    <Compile Include="Controllers\VehiculoController.cs" />
+    <Compile Include="Controllers\ZonaController.cs" />
+    <Compile Include="Filters\AuthenticationAttribute.cs" />
+    <Compile Include="Controllers\CambioClaveController.cs" />
     <Compile Include="Controllers\CapturaPesoController.cs" />
     <Compile Include="Controllers\CierreCarguioController.cs" />
     <Compile Include="Controllers\DistribucionMaquinariaController.cs" />
@@ -119,22 +125,69 @@
     <Compile Include="Controllers\LaborController.cs" />
     <Compile Include="Controllers\ModificacionPesoController.cs" />
     <Compile Include="Controllers\RutaController.cs" />
-    <Compile Include="Data\AccesoDatos.cs" />
-    <Compile Include="Data\Base Datos\Conexion.cs" />
-    <Compile Include="Data\Base Datos\Reader.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\ParametrosEntidad.cs" />
     <Compile Include="Models\ProgramacionCarguio.cs" />
     <Compile Include="Models\ProgramacionCarguioCab.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Common\SessionManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -148,10 +201,18 @@
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="images\logo.png" />
+    <Content Include="Login\Login.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\CoriPuno.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\Controladores\ajax-mvc.js" />
+    <Content Include="Scripts\Controladores\CambioClave\cambio-clave-controller.js" />
+    <Content Include="Scripts\Controladores\CambioClave\cambio-clave-route.js" />
+    <Content Include="Scripts\Controladores\Login\login-controller.js" />
+    <Content Include="Scripts\Controladores\Login\login-route.js" />
+    <Content Include="Scripts\Controladores\Mina\mina-controller.js" />
+    <Content Include="Scripts\Controladores\Mina\mina-route.js" />
     <Content Include="Scripts\Controladores\ModificacionPeso\modificacion-peso-controller.js" />
     <Content Include="Scripts\Controladores\ModificacionPeso\modificacion-peso-route.js" />
     <Content Include="Scripts\Controladores\CapturaPeso\captura-peso-controller.js" />
@@ -161,12 +222,20 @@
     <Content Include="Scripts\Controladores\functions.js" />
     <Content Include="Scripts\Controladores\CierreCarguio\cierre-carguio-controller.js" />
     <Content Include="Scripts\Controladores\CierreCarguio\cierre-carguio-route.js" />
+    <Content Include="Scripts\Controladores\Poligono\poligono-controller.js" />
+    <Content Include="Scripts\Controladores\Poligono\poligono-route.js" />
     <Content Include="Scripts\Controladores\Ruta\ruta-controller.js" />
     <Content Include="Scripts\Controladores\Ruta\ruta-route.js" />
     <Content Include="Scripts\Controladores\Labor\labor-controller.js" />
     <Content Include="Scripts\Controladores\Labor\labor-route.js" />
     <Content Include="Scripts\Controladores\ProgramacionCarguio\programacioncarguio-controller.js" />
     <Content Include="Scripts\Controladores\ProgramacionCarguio\programacioncarguio-route.js" />
+    <Content Include="Scripts\Controladores\Usuario\usuario-controller.js" />
+    <Content Include="Scripts\Controladores\Usuario\usuario-route.js" />
+    <Content Include="Scripts\Controladores\Vehiculo\vehiculo-controller.js" />
+    <Content Include="Scripts\Controladores\Vehiculo\vehiculo-route.js" />
+    <Content Include="Scripts\Controladores\Zona\zona-controller.js" />
+    <Content Include="Scripts\Controladores\Zona\zona-route.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
@@ -174,6 +243,8 @@
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -219,6 +290,31 @@
     <Content Include="Views\CapturaPeso\_DetalleProgramacionPeso.cshtml" />
     <Content Include="Views\ModificacionPeso\Index.cshtml" />
     <Content Include="Views\ModificacionPeso\_ListaLabores.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Usuario\Nuevo.cshtml" />
+    <Content Include="Views\Usuario\Edicion.cshtml" />
+    <Content Include="Views\Usuario\_ResultadosBusqueda.cshtml" />
+    <Content Include="Views\CambioClave\Index.cshtml" />
+    <Content Include="Views\Mina\Index.cshtml" />
+    <Content Include="Views\Mina\Nuevo.cshtml" />
+    <Content Include="Views\Mina\Edicion.cshtml" />
+    <Content Include="Views\Mina\_ResultadosBusqueda.cshtml" />
+    <Content Include="Views\Zona\Index.cshtml" />
+    <Content Include="Views\Zona\Nuevo.cshtml" />
+    <Content Include="Views\Zona\Edicion.cshtml" />
+    <Content Include="Views\Zona\_ResultadosBusqueda.cshtml" />
+    <Content Include="Views\Poligono\Index.cshtml" />
+    <Content Include="Views\Poligono\Nuevo.cshtml" />
+    <Content Include="Views\Poligono\Edicion.cshtml" />
+    <Content Include="Views\Poligono\_ResultadosBusqueda.cshtml" />
+    <Content Include="Views\Vehiculo\Index.cshtml" />
+    <Content Include="Views\Vehiculo\Nuevo.cshtml" />
+    <Content Include="Views\Vehiculo\Edicion.cshtml" />
+    <Content Include="Views\Vehiculo\_ResultadosBusqueda.cshtml" />
+    <Content Include="Views\Componente\Index.cshtml" />
+    <Content Include="Views\Componente\Nuevo.cshtml" />
+    <Content Include="Views\Componente\Edicion.cshtml" />
+    <Content Include="Views\Componente\_ResultadosBusqueda.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

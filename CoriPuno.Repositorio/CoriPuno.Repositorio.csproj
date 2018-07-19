@@ -43,18 +43,24 @@
     <Compile Include="AreaRepositorio.cs" />
     <Compile Include="BaseDatos\Conexion.cs" />
     <Compile Include="BaseDatos\Reader.cs" />
+    <Compile Include="ComponenteRepositorio.cs" />
+    <Compile Include="ContrataRepositorio.cs" />
     <Compile Include="DistribucionEquiposRepositorio.cs" />
     <Compile Include="EquipoRepositorio.cs" />
     <Compile Include="ExtraccionBalanzaRepositorio.cs" />
     <Compile Include="LaborRepositorio.cs" />
     <Compile Include="MinaRepositorio.cs" />
     <Compile Include="ParametrosRepositorio.cs" />
+    <Compile Include="PerfilNavegacionOpcionRepositorio.cs" />
+    <Compile Include="PerfilNavegacionRepositorio.cs" />
+    <Compile Include="PerfilRepositorio.cs" />
     <Compile Include="PoligonoRepositorio.cs" />
     <Compile Include="ProgramacionDiariaCabRepositorio.cs" />
     <Compile Include="ProgramacionDiariaRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RechazoProgramacionRepositorio.cs" />
     <Compile Include="RutaRepositorio.cs" />
+    <Compile Include="UsuarioRepositorio.cs" />
     <Compile Include="VehiculoRepositorio.cs" />
     <Compile Include="ZonaRepositorio.cs" />
   </ItemGroup>

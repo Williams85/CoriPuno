@@ -12,7 +12,9 @@ namespace CoriPuno.Utilitario
         #region "Titulo"
         public const string TituloMina = "Registrar Minas";
         public const string TituloZona = "Registrar Zonas";
+        public const string TituloVehiculo = "Registrar Vehículo";
         public const string TituloPoligono = "Registrar Poligonos";
+        public const string TituloComponente = "Registrar Componentes";
         #endregion
 
         #region "Login"
@@ -51,7 +53,22 @@ namespace CoriPuno.Utilitario
         public const string ExisteUsuario = "El usuario ingresada ya existe...";
         #endregion
 
+        #region "Mantenimiento Vehiculo"
+        public const string GraboVehiculo = "Se grabó el vehículo...";
+        public const string NoGraboVehiculo = "No se grabó el vehículo...";
+        public const string ModificoVehiculo = "Se modificó el vehículo...";
+        public const string NoModificoVehiculo = "No se modificó el vehículo...";
+        public const string ExisteVehiculo = "El vehículo ingresada ya existe...";
+        #endregion
 
+
+        #region "Mantenimiento Componente"
+        public const string GraboComponente = "Se grabó el componente...";
+        public const string NoGraboComponente = "No se grabó el componente...";
+        public const string ModificoComponente = "Se modificó el componente...";
+        public const string NoModificoComponente = "No se modificó el componente...";
+        public const string ExisteComponente = "El componente ingresada ya existe...";
+        #endregion
 
     }
 }

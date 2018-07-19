@@ -97,6 +97,17 @@ var Constantes = {
         FaltaFechaInicioZona: "Ingresar la fecha de inicio",
         ErrorZona: "Mina incorrecto",
 
+        //Mensaje Mantenimiento Vehiculo y Maquinaria
+        FaltaPlaca: "Ingresar la placa",
+        FaltaTara: "Ingresar la tara",
+        FaltaCapacidad: "Ingresar la capacidad",
+        FaltaContrata: "Ingresar la contrata",
+        FaltaMarca: "Ingresar la marca",
+        ErrorTara: "Tara incorrecta",
+        ErrorCapacidad: "Capacidad incorrecta",
+        ErrorContrata: "Contrata incorrecta",
+        ErrorMarca: "Marca incorrecta",
+
         //Mensaje Mantenimiento Mina
         FaltaMina: "Ingresar la descripcion",
         FaltaFechaInicioMina: "Ingresar la fecha de inicio",

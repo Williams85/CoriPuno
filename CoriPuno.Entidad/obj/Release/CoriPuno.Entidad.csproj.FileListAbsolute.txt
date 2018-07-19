@@ -1,0 +1,5 @@
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Entidad\bin\Release\CoriPuno.Entidad.dll
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Entidad\bin\Release\CoriPuno.Entidad.pdb
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Entidad\obj\Release\CoriPuno.Entidad.csprojResolveAssemblyReference.cache
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Entidad\obj\Release\CoriPuno.Entidad.dll
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Entidad\obj\Release\CoriPuno.Entidad.pdb

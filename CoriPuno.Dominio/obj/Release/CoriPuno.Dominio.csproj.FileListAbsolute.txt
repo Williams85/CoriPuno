@@ -1,0 +1,11 @@
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Dominio\bin\Release\CoriPuno.Dominio.dll
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Dominio\bin\Release\CoriPuno.Dominio.pdb
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Dominio\bin\Release\CoriPuno.Entidad.dll
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Dominio\bin\Release\CoriPuno.Repositorio.dll
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Dominio\bin\Release\CoriPuno.Utilitario.dll
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Dominio\bin\Release\CoriPuno.Entidad.pdb
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Dominio\bin\Release\CoriPuno.Repositorio.pdb
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Dominio\bin\Release\CoriPuno.Utilitario.pdb
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Dominio\obj\Release\CoriPuno.Dominio.csprojResolveAssemblyReference.cache
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Dominio\obj\Release\CoriPuno.Dominio.dll
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Dominio\obj\Release\CoriPuno.Dominio.pdb
