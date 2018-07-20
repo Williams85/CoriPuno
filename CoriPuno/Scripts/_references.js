@@ -37,3 +37,5 @@
 /// <reference path="controladores/zona/zona-route.js" />
 /// <reference path="controladores/vehiculo/vehiculo-controller.js" />
 /// <reference path="controladores/vehiculo/vehiculo-route.js" />
+/// <reference path="controladores/componente/componente-controller.js" />
+/// <reference path="controladores/componente/componente-route.js" />

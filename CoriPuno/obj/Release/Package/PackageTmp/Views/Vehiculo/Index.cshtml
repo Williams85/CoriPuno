@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>@ViewBag.TituloPagina</h1>
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-6 control-label">Placa:</label>
+                <div class="col-md-6 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="Placa" id="Placa" placeholder="Placa" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-6 control-label">Marca:</label>
+                <div class="col-md-6 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="Marca" id="Marca" placeholder="Marca" class="form-control">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-3 text-right">
+                    <input type="submit" id="btn-buscar" class="btn btn-primary" value="Buscar" />
+                </div>
+                <div class="col-md-3 text-left">
+                    <a href="@Url.Action("Nuevo","Vehiculo")" class="btn btn-warning">Nuevo</a>
+                </div>
+                <label class="col-md-3 control-label"></label>
+            </div>
+        </fieldset>
+    </form>
+
+
+
+
+</div>
+<div id="IdResultado">
+
+</div>
+
+@Scripts.Render("~/bundles/mantenimiento-vehiculo")
+

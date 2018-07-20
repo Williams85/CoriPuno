@@ -66,7 +66,7 @@ var Constantes = {
         Empresa: "^[0-9A-Za-zñÑaáéíóúÁÉÍÓÚ&.' ]+$",
         Ruc: "^[0-9]{11,11}$",
         SoloNumeros: "^[0-9]+$",
-        SoloLetras: "^[A-Za-zñÑaáéíóúÁÉÍÓÚ]+$",
+        SoloLetras: "^[A-Za-zñÑaáéíóúÁÉÍÓÚ ]+$",
         NumerosLetras: "^[0-9A-Za-zñÑaáéíóúÁÉÍÓÚ_ ]+$",
         Clima: "^[0-9CF° ]+$",
         Poblacion: "^[0-9,. ]+$",
@@ -107,6 +107,22 @@ var Constantes = {
         ErrorCapacidad: "Capacidad incorrecta",
         ErrorContrata: "Contrata incorrecta",
         ErrorMarca: "Marca incorrecta",
+
+        //Mensaje Mantenimiento Componentes
+        FaltaComponente: "Ingresar el componente",
+        FaltaSigla: "Ingresar la sigla",
+        FaltaUndMedida: "Ingresar la unidad de medida",
+        FaltaFuente: "Ingresar la fuente",
+        FaltaProcedimiento: "Ingresar el procedimiento",
+        ErrorComponente: "Componente incorrecta",
+        ErrorSigla: "Sigla incorrecta",
+        ErrorUndMedida: "Unidad de Medida incorrecta",
+        ErrorFuente: "Fuente incorrecta",
+        ErrorProcedimiento: "Procedimiento incorrecta",
+        //ErrorTara: "Tara incorrecta",
+        //ErrorCapacidad: "Capacidad incorrecta",
+        //ErrorContrata: "Contrata incorrecta",
+        //ErrorMarca: "Marca incorrecta",
 
         //Mensaje Mantenimiento Mina
         FaltaMina: "Ingresar la descripcion",

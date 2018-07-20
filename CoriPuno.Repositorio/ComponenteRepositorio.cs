@@ -152,7 +152,7 @@ namespace CoriPuno.Repositorio
                 cmd.Parameters.Add(new SqlParameter("@cSigla", SqlDbType.VarChar, 20)).Value = entidad.Sigla;
                 cmd.Parameters.Add(new SqlParameter("@cUnidadMedida", SqlDbType.VarChar, 20)).Value = entidad.UnidadMedida;
                 cmd.Parameters.Add(new SqlParameter("@cFuente", SqlDbType.VarChar, 200)).Value = entidad.Fuente;
-                cmd.Parameters.Add(new SqlParameter("@cProcedimiento", SqlDbType.VarChar, 200)).Value = entidad.Procedimiento;
+                cmd.Parameters.Add(new SqlParameter("@cProcedimiento", SqlDbType.VarChar, 200)).Value = (entidad.Procedimiento != null ? entidad.Procedimiento : "");
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Transaction = trans;
                 if (cmd.ExecuteNonQuery() > 0) estado = true;
@@ -191,7 +191,7 @@ namespace CoriPuno.Repositorio
                 cmd.Parameters.Add(new SqlParameter("@cSigla", SqlDbType.VarChar, 20)).Value = entidad.Sigla;
                 cmd.Parameters.Add(new SqlParameter("@cUnidadMedida", SqlDbType.VarChar, 20)).Value = entidad.UnidadMedida;
                 cmd.Parameters.Add(new SqlParameter("@cFuente", SqlDbType.VarChar, 200)).Value = entidad.Fuente;
-                cmd.Parameters.Add(new SqlParameter("@cProcedimiento", SqlDbType.VarChar, 200)).Value = entidad.Procedimiento;
+                cmd.Parameters.Add(new SqlParameter("@cProcedimiento", SqlDbType.VarChar, 200)).Value = (entidad.Procedimiento != null ? entidad.Procedimiento : "");
                 cmd.Parameters.Add(new SqlParameter("@IEstado", SqlDbType.Char, 1)).Value = entidad.Estado;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Transaction = trans;

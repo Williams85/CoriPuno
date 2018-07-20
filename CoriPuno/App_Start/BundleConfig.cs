@@ -76,6 +76,11 @@ namespace CoriPuno
                                   "~/Scripts/Controladores/Vehiculo/vehiculo-route.js",
                                   "~/Scripts/Controladores/Vehiculo/vehiculo-controller.js"));
 
+            //Mantenimiento de Componentes
+            bundles.Add(new ScriptBundle("~/bundles/mantenimiento-componente").Include(
+                                  "~/Scripts/Controladores/Componente/componente-route.js",
+                                  "~/Scripts/Controladores/Componente/componente-controller.js"));
+
             //Cambio de Clave
             bundles.Add(new ScriptBundle("~/bundles/mantenimiento-cambio-clave").Include(
                                   "~/Scripts/Controladores/CambioClave/cambio-clave-route.js",

@@ -13,19 +13,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/21/2018 19:53:16</publishTime>
     </File>
     <File Include="bin/CoriPuno.dll">
-      <publishTime>03/26/2018 20:51:51</publishTime>
+      <publishTime>07/19/2018 19:09:42</publishTime>
     </File>
     <File Include="bin/CoriPuno.Dominio.dll">
-      <publishTime>03/26/2018 20:51:50</publishTime>
+      <publishTime>07/19/2018 19:09:41</publishTime>
     </File>
     <File Include="bin/CoriPuno.Entidad.dll">
-      <publishTime>03/26/2018 20:51:45</publishTime>
+      <publishTime>07/19/2018 19:09:40</publishTime>
     </File>
     <File Include="bin/CoriPuno.Repositorio.dll">
-      <publishTime>03/26/2018 20:51:50</publishTime>
+      <publishTime>07/19/2018 19:09:41</publishTime>
     </File>
     <File Include="bin/CoriPuno.Utilitario.dll">
-      <publishTime>03/26/2018 20:51:45</publishTime>
+      <publishTime>07/19/2018 19:09:40</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>02/21/2018 19:55:54</publishTime>
@@ -264,6 +264,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/Controladores/CierreCarguio/cierre-carguio-route.js">
       <publishTime>02/21/2018 19:53:32</publishTime>
     </File>
+    <File Include="Scripts/Controladores/Componente/componente-controller.js">
+      <publishTime>07/19/2018 19:06:21</publishTime>
+    </File>
+    <File Include="Scripts/Controladores/Componente/componente-route.js">
+      <publishTime>07/19/2018 17:22:49</publishTime>
+    </File>
     <File Include="Scripts/Controladores/DistribucionMaquinaria/distribucionmaquinaria-controller.js">
       <publishTime>02/21/2018 19:53:32</publishTime>
     </File>
@@ -271,7 +277,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/21/2018 19:53:32</publishTime>
     </File>
     <File Include="Scripts/Controladores/functions.js">
-      <publishTime>03/07/2018 21:57:18</publishTime>
+      <publishTime>07/19/2018 18:32:05</publishTime>
     </File>
     <File Include="Scripts/Controladores/Labor/labor-controller.js">
       <publishTime>02/21/2018 19:53:34</publishTime>
@@ -320,6 +326,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Scripts/Controladores/Usuario/usuario-route.js">
       <publishTime>03/07/2018 10:41:13</publishTime>
+    </File>
+    <File Include="Scripts/Controladores/Vehiculo/vehiculo-controller.js">
+      <publishTime>07/19/2018 00:17:45</publishTime>
+    </File>
+    <File Include="Scripts/Controladores/Vehiculo/vehiculo-route.js">
+      <publishTime>06/13/2018 14:20:36</publishTime>
     </File>
     <File Include="Scripts/Controladores/Zona/zona-controller.js">
       <publishTime>03/07/2018 16:21:07</publishTime>
@@ -373,7 +385,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/21/2018 19:51:40</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>03/07/2018 15:15:06</publishTime>
+      <publishTime>07/19/2018 17:22:25</publishTime>
     </File>
     <File Include="Views/CambioClave/Index.cshtml">
       <publishTime>02/28/2018 20:35:20</publishTime>
@@ -401,6 +413,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Views/CierreCarguio/_ListaProgramacion.cshtml">
       <publishTime>02/21/2018 19:52:46</publishTime>
+    </File>
+    <File Include="Views/Componente/Edicion.cshtml">
+      <publishTime>07/19/2018 19:06:58</publishTime>
+    </File>
+    <File Include="Views/Componente/Index.cshtml">
+      <publishTime>07/19/2018 17:29:00</publishTime>
+    </File>
+    <File Include="Views/Componente/Nuevo.cshtml">
+      <publishTime>07/19/2018 18:30:39</publishTime>
+    </File>
+    <File Include="Views/Componente/_ResultadosBusqueda.cshtml">
+      <publishTime>07/19/2018 18:55:55</publishTime>
     </File>
     <File Include="Views/DistribucionMaquinaria/Index.cshtml">
       <publishTime>02/21/2018 19:52:50</publishTime>
@@ -492,6 +516,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Usuario/_ResultadosBusqueda.cshtml">
       <publishTime>02/28/2018 11:20:03</publishTime>
     </File>
+    <File Include="Views/Vehiculo/Edicion.cshtml">
+      <publishTime>07/19/2018 00:18:13</publishTime>
+    </File>
+    <File Include="Views/Vehiculo/Index.cshtml">
+      <publishTime>06/13/2018 14:25:17</publishTime>
+    </File>
+    <File Include="Views/Vehiculo/Nuevo.cshtml">
+      <publishTime>07/19/2018 00:08:39</publishTime>
+    </File>
+    <File Include="Views/Vehiculo/_ResultadosBusqueda.cshtml">
+      <publishTime>07/19/2018 00:25:42</publishTime>
+    </File>
     <File Include="Views/Web.config">
       <publishTime>02/21/2018 19:51:40</publishTime>
     </File>
@@ -511,7 +547,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/21/2018 19:51:38</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/26/2018 20:51:56</publishTime>
+      <publishTime>07/19/2018 19:09:43</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -209,6 +209,8 @@
     <Content Include="Scripts\Controladores\ajax-mvc.js" />
     <Content Include="Scripts\Controladores\CambioClave\cambio-clave-controller.js" />
     <Content Include="Scripts\Controladores\CambioClave\cambio-clave-route.js" />
+    <Content Include="Scripts\Controladores\Componente\componente-controller.js" />
+    <Content Include="Scripts\Controladores\Componente\componente-route.js" />
     <Content Include="Scripts\Controladores\Login\login-controller.js" />
     <Content Include="Scripts\Controladores\Login\login-route.js" />
     <Content Include="Scripts\Controladores\Mina\mina-controller.js" />

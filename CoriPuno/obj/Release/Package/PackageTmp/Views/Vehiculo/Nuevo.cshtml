@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+<h1>@ViewBag.TituloPagina</h1>
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+            <!-- Text input-->
+            <div class="form-group">
+                <label for="Placa" class="col-md-4 control-label">Placa:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="Placa" id="Placa" placeholder="Placa" class="form-control" maxlength="10">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Tara" class="col-md-4 control-label">Tara:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="Tara" id="Tara" placeholder="Tara" class="form-control" maxlength="5" >
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Capacidad" class="col-md-4 control-label">Capacidad:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="Capacidad" id="Capacidad" placeholder="Capacidad" class="form-control" maxlength="5" >
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Tara" class="col-md-4 control-label">Contrata:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.DropDownList("Contrata", new SelectList(ViewBag.ListaContrata, "Id_Contrata", "Razon_Social"), null, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Marca" class="col-md-4 control-label">Marca:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="Marca" id="Marca" placeholder="Marca" class="form-control" maxlength="10">
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-danger text-left" id="Message-Error">
+                <strong></strong>
+            </div>
+            <div class="alert alert-success text-left" id="Message-OK">
+                <strong></strong>
+            </div>
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-3">
+                    <input type="submit" id="btn-grabar" class="btn btn-primary" value="Grabar" />
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("Index","Vehiculo")" class="btn btn-warning">Regresar</a>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+
+
+
+
+</div>
+
+@Scripts.Render("~/bundles/mantenimiento-vehiculo")
+
+
+
+
+
+
+
+
+
