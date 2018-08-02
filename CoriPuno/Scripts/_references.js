@@ -39,3 +39,5 @@
 /// <reference path="controladores/vehiculo/vehiculo-route.js" />
 /// <reference path="controladores/componente/componente-controller.js" />
 /// <reference path="controladores/componente/componente-route.js" />
+/// <reference path="controladores/consolidadocarguio/consolidado-carguio-controller.js" />
+/// <reference path="controladores/consolidadocarguio/consolidado-carguio-route.js" />

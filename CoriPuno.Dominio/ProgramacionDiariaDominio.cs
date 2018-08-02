@@ -31,5 +31,10 @@ namespace CoriPuno.Dominio
         {
             return oProgramacionDiariaRepositorio.listarProgramacionCapturaPeso(fecha, turno);
         }
+
+        public List<ProgramacionDiariaEntidad> listarConsolidadoCarguio(DateTime fecha)
+        {
+            return oProgramacionDiariaRepositorio.listarConsolidadoCarguio(fecha);
+        }
     }
 }

@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>@ViewBag.TituloPagina</h1>
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Fecha Consolidado:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="date" name="Fecha" id="Fecha" placeholder="Fecha" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-6">
+                    <input type="submit" id="btn-consolidado-carguio" class="btn btn-primary" value="Buscar Consolidado Carguio" />
+                </div>
+                <label class="col-md-3 control-label"></label>
+            </div>
+            <div class="alert alert-danger" role="alert" id="Message-Error"></div>
+            <div class="alert alert-success" role="alert" id="Message-OK"></div>
+
+        </fieldset>
+    </form>
+
+
+
+
+</div>
+
+<div id="IdResultado">
+
+</div>
+
+
+
+@Scripts.Render("~/bundles/consolidado-carguio")
+@Scripts.Render("~/bundles/script-layaout")
+

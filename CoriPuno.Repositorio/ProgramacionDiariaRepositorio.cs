@@ -166,5 +166,38 @@ namespace CoriPuno.Repositorio
             }
         }
 
+        public List<ProgramacionDiariaEntidad> listarConsolidadoCarguio(DateTime fecha)
+        {
+            SqlConnection cn = new SqlConnection(Conexion.CnCoriPuno);
+            try
+            {
+                Conexion.abrirConexion(cn);
+                SqlCommand cmd = new SqlCommand("Consolidado_carguio", cn);
+                cmd.Parameters.Add(new SqlParameter("@fecha", SqlDbType.DateTime)).Value = fecha;
+                cmd.CommandType = CommandType.StoredProcedure;
+                List<ProgramacionDiariaEntidad> ListaConsolidadoCarguio = new List<ProgramacionDiariaEntidad>();
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    ProgramacionDiariaEntidad oProgramacionDiariaEntidad = new ProgramacionDiariaEntidad();
+                    oProgramacionDiariaEntidad.LaborDestino = Reader.GetStringValue(reader, "labor_de");
+                    oProgramacionDiariaEntidad.Ley = Reader.GetDecimalValue(reader, "ley");
+                    oProgramacionDiariaEntidad.Programado = Reader.GetDecimalValue(reader, "programado");
+                    oProgramacionDiariaEntidad.Ejecutado = Reader.GetDecimalValue(reader, "ejecutado");
+                    oProgramacionDiariaEntidad.PorVariacion = Reader.GetDecimalValue(reader, "porvariacion");
+                    ListaConsolidadoCarguio.Add(oProgramacionDiariaEntidad);
+                }
+
+                return ListaConsolidadoCarguio;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                Conexion.cerrarConexion(cn);
+            }
+        }
     }
 }

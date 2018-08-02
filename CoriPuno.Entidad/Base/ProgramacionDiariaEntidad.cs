@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoriPuno.Entidad
 {
-    public class ProgramacionDiariaEntidad
+    public partial class ProgramacionDiariaEntidad
     {
         public int Año { get; set; }
         public string Mes { get; set; }

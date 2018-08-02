@@ -101,6 +101,11 @@ namespace CoriPuno
                                   "~/Scripts/Controladores/ModificacionPeso/modificacion-peso-route.js",
                                   "~/Scripts/Controladores/ModificacionPeso/modificacion-peso-controller.js"));
 
+            //Elaboración Consolidado Carguio
+            bundles.Add(new ScriptBundle("~/bundles/consolidado-carguio").Include(
+                                  "~/Scripts/Controladores/ConsolidadoCarguio/consolidado-carguio-route.js",
+                                  "~/Scripts/Controladores/ConsolidadoCarguio/consolidado-carguio-controller.js"));
+
 
         }
     }

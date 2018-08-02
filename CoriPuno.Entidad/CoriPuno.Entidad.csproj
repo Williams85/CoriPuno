@@ -59,6 +59,7 @@
     <Compile Include="Base\PerfilNavegacionOpcionEntidad.cs" />
     <Compile Include="PerfilNavegacionEntidad.cs" />
     <Compile Include="ProgramacionDiariaCabEntidad.cs" />
+    <Compile Include="ProgramacionDiariaEntidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Base\RutaEntidad.cs" />
     <Compile Include="RechazoProgramacionEntidad.cs" />
