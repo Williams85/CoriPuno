@@ -1,0 +1,89 @@
+﻿@model List<CoriPuno.Entidad.ProgramacionDiariaEntidad>
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <h1>Disponibilidad de Material a Planta</h1>
+
+
+
+    @if (Model != null && Model.Count > 0)
+    {
+        <h3>Material Disponible</h3>
+
+        <table id="keywords" cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <th><span>Seleccionar</span></th>
+                    <th><span>Fecha Ejecución</span></th>
+                    <th><span>Turno</span></th>
+                    <th><span>Labor Destino</span></th>
+                    <th><span>Ley</span></th>
+                    <th><span>Toneladas a Procesar</span></th>
+                    <th><span>Toneladas Ejecucion</span></th>
+                    <th><span>Stock</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                    {
+                <tr>
+                    <td class="lalign">
+                        @if (item.Seleccion >= 1)
+                                {
+                            <input type="checkbox" value="" checked readonly name="seleccion" class="seleccion item-stock" data-año="@item.Año" data-mes="@item.Mes" data-turno="@item.Turno" data-labor-origen="@item.LaborOrigen" data-labor-destino="@item.LaborDestino">
+                                }
+                                else
+                                {
+                            <input type="checkbox" value="" name="seleccion" class="seleccion item-stock" data-año="@item.Año" data-mes="@item.Mes" data-turno="@item.Turno" data-labor-origen="@item.LaborOrigen" data-labor-destino="@item.LaborDestino">
+                                }
+                    </td>
+                    <td>@item.FechaEjecucion.ToString("dd/MM/yyyy")</td>
+                    <td>@CoriPuno.Utilitario.Functions.obtenerTurno(item.Turno)</td>
+                    <td>@item.LaborDestino</td>
+                    <td>@item.Ley.ToString("F2")</td>
+                    <td>@item.ToneladasProcesar.ToString("F2")</td>
+                    <td>@item.ToneladasEjecucion.ToString("F2")</td>
+                    <td>@item.Stock.ToString("F2")</td>
+                </tr>
+                    }
+
+            </tbody>
+        </table>
+
+        <div class="container">
+            <form class="well form-horizontal" action=" " method="post" id="contact_form">
+                <fieldset>
+                    <!-- Button -->
+                    <div class="form-group">
+                        <div class="col-md-12 text-right">
+                            <button type="button" class="btn btn-primary" id="IdActualizaConsolidado" name="IdAprobado">Actualiza Consolidado</button>
+                        </div>
+                        <div class="clear"></div>
+                        <br />
+                        <!-- Success message -->
+                        <div class="alert alert-success" role="alert" id="success_message"></div>
+                        <div class="alert alert-danger" role="alert" id="alert_message"></div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div id="IdConsolidadoMaterial">
+
+        </div>
+    }
+    else
+    {
+        <div class="NoDatos">
+            No hay información
+        </div>
+    }
+
+
+    @Scripts.Render("~/bundles/disponibilidad-material-planta")
+    @Scripts.Render("~/bundles/script-layaout")
+
+
+
+

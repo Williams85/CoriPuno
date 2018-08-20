@@ -14,4 +14,3 @@ D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Utilitario\bin\De
 D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Utilitario\bin\Debug\CoriPuno.Utilitario.pdb
 D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Utilitario\obj\Debug\CoriPuno.Utilitario.dll
 D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Utilitario\obj\Debug\CoriPuno.Utilitario.pdb
-D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Utilitario\obj\Debug\CoriPuno.Utilitario.csprojResolveAssemblyReference.cache

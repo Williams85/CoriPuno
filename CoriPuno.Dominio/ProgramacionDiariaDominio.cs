@@ -36,5 +36,16 @@ namespace CoriPuno.Dominio
         {
             return oProgramacionDiariaRepositorio.listarConsolidadoCarguio(fecha);
         }
+
+        public List<ProgramacionDiariaEntidad> listarStockDisponible()
+        {
+            return oProgramacionDiariaRepositorio.listarStockDisponible();
+        }
+
+        public List<ProgramacionDiariaEntidad> actualizarStockDisponible(List<ProgramacionDiariaEntidad> ListaProgramacionDiaria)
+        {
+            return oProgramacionDiariaRepositorio.actualizarStockDisponible(ListaProgramacionDiaria);
+        }
+
     }
 }

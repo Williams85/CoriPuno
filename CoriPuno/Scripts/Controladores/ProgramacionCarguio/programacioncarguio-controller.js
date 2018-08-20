@@ -14,20 +14,20 @@
         var ParametroOrigen = $(this).attr("data-parametroorigen");
         var ParametroDestino = $(this).attr("data-parametrodestino");
 
-        var mensaje = "";
-        if (CantidadOrigen != ParametroOrigen) {
-            mensaje += "Número de labores Origen activas deben ser " + ParametroDestino +  "<br/>";
-        }
-        if (CantidadDestino != ParametroDestino) {
-            mensaje += "Número de labores destino activas deben ser " + ParametroDestino + "<br/>";
-        }
+        //var mensaje = "";
+        //if (CantidadOrigen != ParametroOrigen) {
+        //    mensaje += "Número de labores Origen activas deben ser " + ParametroDestino +  "<br/>";
+        //}
+        //if (CantidadDestino != ParametroDestino) {
+        //    mensaje += "Número de labores destino activas deben ser " + ParametroDestino + "<br/>";
+        //}
 
-        if (mensaje != "") {
-            $("#alert_message").empty();
-            $("#alert_message").append(mensaje);
-            $("#alert_message").show();
-            return false;
-        }
+        //if (mensaje != "") {
+        //    $("#alert_message").empty();
+        //    $("#alert_message").append(mensaje);
+        //    $("#alert_message").show();
+        //    return false;
+        //}
         if ((LeyMinima == null || LeyMinima == "") || (LeyMaxima == null || LeyMaxima == "") || (FEjecucion == null || FEjecucion == "")) {
             $("#alert_message").empty();
             $("#alert_message").append('Ingresar todos los valores!');

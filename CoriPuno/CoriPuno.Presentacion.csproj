@@ -113,6 +113,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ComponenteController.cs" />
     <Compile Include="Controllers\ConsolidadoCarguioController.cs" />
+    <Compile Include="Controllers\DisponibilidadPlantaController.cs" />
     <Compile Include="Controllers\MinaController.cs" />
     <Compile Include="Controllers\PoligonoController.cs" />
     <Compile Include="Controllers\VehiculoController.cs" />
@@ -214,6 +215,8 @@
     <Content Include="Scripts\Controladores\Componente\componente-route.js" />
     <Content Include="Scripts\Controladores\ConsolidadoCarguio\consolidado-carguio-controller.js" />
     <Content Include="Scripts\Controladores\ConsolidadoCarguio\consolidado-carguio-route.js" />
+    <Content Include="Scripts\Controladores\DisponibilidadPlanta\disponibilidad-planta-controller.js" />
+    <Content Include="Scripts\Controladores\DisponibilidadPlanta\disponibilidad-planta-route.js" />
     <Content Include="Scripts\Controladores\Login\login-controller.js" />
     <Content Include="Scripts\Controladores\Login\login-route.js" />
     <Content Include="Scripts\Controladores\Mina\mina-controller.js" />
@@ -322,6 +325,8 @@
     <Content Include="Views\Componente\_ResultadosBusqueda.cshtml" />
     <Content Include="Views\ConsolidadoCarguio\Index.cshtml" />
     <Content Include="Views\ConsolidadoCarguio\_ResultadoBusqueda.cshtml" />
+    <Content Include="Views\DisponibilidadPlanta\Index.cshtml" />
+    <Content Include="Views\DisponibilidadPlanta\_ActualizarStockDisponible.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -91,6 +91,9 @@ body {
     font-weight:normal;
     margin-left:10px;
 }
+.clear{
+    clear:both;
+}
 
 .container {
     max-width: 100% !important;

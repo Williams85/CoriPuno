@@ -20,9 +20,9 @@ namespace CoriPuno.Repositorio
                 Conexion.abrirConexion(cn);
                 SqlCommand cmd = new SqlCommand("cargaprograma", cn);
                 cmd.Parameters.Add(new SqlParameter("@fecha", SqlDbType.DateTime)).Value = fecha;
-                cmd.Parameters.Add(new SqlParameter("@turno", SqlDbType.VarChar,10)).Value = turno;
-                cmd.Parameters.Add(new SqlParameter("@leymin", SqlDbType.Decimal,18)).Value = leyminima;
-                cmd.Parameters.Add(new SqlParameter("@leymax", SqlDbType.Decimal,18)).Value = leymaxima;
+                cmd.Parameters.Add(new SqlParameter("@turno", SqlDbType.VarChar, 10)).Value = turno;
+                cmd.Parameters.Add(new SqlParameter("@leymin", SqlDbType.Decimal, 18)).Value = leyminima;
+                cmd.Parameters.Add(new SqlParameter("@leymax", SqlDbType.Decimal, 18)).Value = leymaxima;
                 cmd.Parameters.Add(new SqlParameter("@codmes", SqlDbType.Int)).Direction = ParameterDirection.Output;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.ExecuteNonQuery();
@@ -199,5 +199,112 @@ namespace CoriPuno.Repositorio
                 Conexion.cerrarConexion(cn);
             }
         }
+
+        public List<ProgramacionDiariaEntidad> listarStockDisponible()
+        {
+            SqlConnection cn = new SqlConnection(Conexion.CnCoriPuno);
+            try
+            {
+                Conexion.abrirConexion(cn);
+                SqlCommand cmd = new SqlCommand("dProgramacionDiaria_stock_disponible", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                List<ProgramacionDiariaEntidad> ListaStockDisponible = new List<ProgramacionDiariaEntidad>();
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    ProgramacionDiariaEntidad oProgramacionDiariaEntidad = new ProgramacionDiariaEntidad();
+                    oProgramacionDiariaEntidad.Año = Reader.GetIntValue(reader, "año");
+                    oProgramacionDiariaEntidad.Mes = Reader.GetStringValue(reader, "mes");
+                    oProgramacionDiariaEntidad.FechaEjecucion = Reader.GetDateTimeValue(reader, "feceje");
+                    oProgramacionDiariaEntidad.Turno = Reader.GetStringValue(reader, "turno");
+                    oProgramacionDiariaEntidad.LaborOrigen = Reader.GetStringValue(reader, "Labor_or");
+                    oProgramacionDiariaEntidad.LaborDestino = Reader.GetStringValue(reader, "labor_de");
+                    oProgramacionDiariaEntidad.Ley = Reader.GetDecimalValue(reader, "Ley");
+                    oProgramacionDiariaEntidad.ToneladasEjecucion = Reader.GetDecimalValue(reader, "ntotMet_ejec");
+                    oProgramacionDiariaEntidad.ToneladasProcesar = Reader.GetDecimalValue(reader, "ntotmet_proc");
+                    oProgramacionDiariaEntidad.Stock = Reader.GetDecimalValue(reader, "stock");
+                    oProgramacionDiariaEntidad.Seleccion = Reader.GetIntValue(reader, "nsel");
+                    ListaStockDisponible.Add(oProgramacionDiariaEntidad);
+                }
+
+                return ListaStockDisponible;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                Conexion.cerrarConexion(cn);
+            }
+        }
+
+        public List<ProgramacionDiariaEntidad> actualizarStockDisponible(List<ProgramacionDiariaEntidad> ListaProgramacionDiaria)
+        {
+            SqlConnection cn = new SqlConnection(Conexion.CnCoriPuno);
+            bool estado = true;
+            SqlTransaction trans = null;
+            try
+            {
+                Conexion.abrirConexion(cn);
+                trans = cn.BeginTransaction();
+                SqlCommand cmd01 = new SqlCommand("dProgramacionDiaria_desactivar_seleccion", cn);
+                cmd01.CommandType = CommandType.StoredProcedure;
+                cmd01.Transaction = trans;
+                if (cmd01.ExecuteNonQuery() > 0)
+                {
+
+                    foreach (var item in ListaProgramacionDiaria)
+                    {
+                        SqlCommand cmd02 = new SqlCommand("dProgramacionDiaria_activar_seleccion", cn);
+                        cmd02.Parameters.Add(new SqlParameter("@año", SqlDbType.Int)).Value = item.Año;
+                        cmd02.Parameters.Add(new SqlParameter("@mes", SqlDbType.Char,4)).Value = item.Mes;
+                        cmd02.Parameters.Add(new SqlParameter("@turno", SqlDbType.VarChar,10)).Value = item.Turno;
+                        cmd02.Parameters.Add(new SqlParameter("@Labor_or", SqlDbType.VarChar, 10)).Value = item.LaborOrigen;
+                        cmd02.Parameters.Add(new SqlParameter("@Labor_de", SqlDbType.VarChar, 10)).Value = item.LaborDestino;
+                        cmd02.CommandType = CommandType.StoredProcedure;
+                        cmd02.Transaction = trans;
+                        if (cmd02.ExecuteNonQuery() < 1)
+                        {
+                            estado = false;
+                            break;
+                        }
+                    }
+                    if (estado){
+                        trans.Commit();
+                    }
+
+                    else
+                        trans.Rollback();
+                }
+
+                SqlCommand cmd03 = new SqlCommand("reporte_consolidadostockdisponible", cn);
+                cmd03.CommandType = CommandType.StoredProcedure;
+                List<ProgramacionDiariaEntidad> ListaReporteStockDisponible = new List<ProgramacionDiariaEntidad>();
+                var reader = cmd03.ExecuteReader();
+                while (reader.Read())
+                {
+                    ProgramacionDiariaEntidad oProgramacionDiariaEntidad = new ProgramacionDiariaEntidad();
+                    oProgramacionDiariaEntidad.LaborDestino = Reader.GetStringValue(reader, "labor_de");
+                    oProgramacionDiariaEntidad.Ley = Reader.GetDecimalValue(reader, "Ley");
+                    oProgramacionDiariaEntidad.Stock = Reader.GetDecimalValue(reader, "stock");
+                    ListaReporteStockDisponible.Add(oProgramacionDiariaEntidad);
+                }
+
+                return ListaReporteStockDisponible;
+            }
+            catch (Exception ex)
+            {
+                if (trans != null)
+                    trans.Rollback();
+                return null;
+            }
+            finally
+            {
+                Conexion.cerrarConexion(cn);
+            }
+        }
+
+
     }
 }

@@ -1,0 +1,37 @@
+﻿@model List<CoriPuno.Entidad.ProgramacionDiariaEntidad>
+    @{
+        ViewBag.Title = "_ActualizarStockDisponible";
+    }
+
+    @if (Model != null && Model.Count > 0)
+    {
+        <h3>Consolidado de Material</h3>
+        <table id="keywords" cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <th><span>Labor Destino</span></th>
+                    <th><span>Ley</span></th>
+                    <th><span>Stock</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.LaborDestino</td>
+                        <td>@item.Ley.ToString("F2")</td>
+                        <td>@item.Stock.ToString("F2")</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    }
+    else
+    {
+        <div class="NoDatos">
+            No hay información
+        </div>
+    }
+

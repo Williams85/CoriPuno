@@ -24,7 +24,8 @@ namespace CoriPuno.Entidad
         public decimal ToneladasEjecucion { get; set; }
 
         public int Id_Prog { get; set; }
+        public decimal Stock { get; set; }
 
-
+        public int Seleccion { get; set; }
     }
 }

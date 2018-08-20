@@ -106,6 +106,11 @@ namespace CoriPuno
                                   "~/Scripts/Controladores/ConsolidadoCarguio/consolidado-carguio-route.js",
                                   "~/Scripts/Controladores/ConsolidadoCarguio/consolidado-carguio-controller.js"));
 
+            //Disponibilidad de Material de Planta
+            bundles.Add(new ScriptBundle("~/bundles/disponibilidad-material-planta").Include(
+                                  "~/Scripts/Controladores/DisponibilidadPlanta/disponibilidad-planta-route.js",
+                                  "~/Scripts/Controladores/DisponibilidadPlanta/disponibilidad-planta-controller.js"));
+
 
         }
     }
