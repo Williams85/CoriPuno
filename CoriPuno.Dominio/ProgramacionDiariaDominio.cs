@@ -47,5 +47,9 @@ namespace CoriPuno.Dominio
             return oProgramacionDiariaRepositorio.actualizarStockDisponible(ListaProgramacionDiaria);
         }
 
+        public decimal SimuladorPeso(decimal tm)
+        {
+            return oProgramacionDiariaRepositorio.SimuladorPeso(tm);
+        }
     }
 }

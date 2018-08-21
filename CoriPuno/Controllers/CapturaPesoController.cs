@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace CoriPuno.Controllers
 {
-        [Authentication]
+    [Authentication]
     public class CapturaPesoController : Controller
     {
         // GET: CapturaPeso
@@ -23,9 +23,13 @@ namespace CoriPuno.Controllers
         public ActionResult CapturarPeso(string placa)
         {
             VehiculoDominio oVehiculoDominio = new VehiculoDominio();
+            ProgramacionDiariaDominio oProgramacionDiariaDominio = new ProgramacionDiariaDominio();
             var vehiculo = oVehiculoDominio.obtenerDatosXFiltro(placa);
             if (vehiculo != null)
-                vehiculo.PesoNeto = 5.4m;
+            {
+                vehiculo.Peso = oProgramacionDiariaDominio.SimuladorPeso(vehiculo.Capacidad);
+                vehiculo.PesoNeto = vehiculo.Peso - vehiculo.Tara;
+            }
             return PartialView("_DatosVehiculo", vehiculo);
         }
 

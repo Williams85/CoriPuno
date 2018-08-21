@@ -11,6 +11,8 @@ namespace CoriPuno.Entidad
         public decimal Programado { get; set; }
         public decimal Ejecutado { get; set; }
         public decimal PorVariacion { get; set; }
+        public decimal TM_Ingresado { get; set; }
+        public decimal TM_Consumida { get; set; }
 
     }
 }

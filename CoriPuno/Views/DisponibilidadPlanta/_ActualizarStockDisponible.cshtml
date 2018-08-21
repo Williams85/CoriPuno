@@ -11,6 +11,8 @@
                 <tr>
                     <th><span>Labor Destino</span></th>
                     <th><span>Ley</span></th>
+                    <th><span>TM Ingreso</span></th>
+                    <th><span>TM Consumida</span></th>
                     <th><span>Stock</span></th>
                 </tr>
             </thead>
@@ -20,7 +22,10 @@
                     <tr>
                         <td>@item.LaborDestino</td>
                         <td>@item.Ley.ToString("F2")</td>
+                        <td>@item.TM_Ingresado.ToString("F2")</td>
+                        <td>@item.TM_Consumida.ToString("F2")</td>
                         <td>@item.Stock.ToString("F2")</td>
+
                     </tr>
                 }
 

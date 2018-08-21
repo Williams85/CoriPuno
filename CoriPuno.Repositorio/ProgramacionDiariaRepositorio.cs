@@ -287,6 +287,8 @@ namespace CoriPuno.Repositorio
                     ProgramacionDiariaEntidad oProgramacionDiariaEntidad = new ProgramacionDiariaEntidad();
                     oProgramacionDiariaEntidad.LaborDestino = Reader.GetStringValue(reader, "labor_de");
                     oProgramacionDiariaEntidad.Ley = Reader.GetDecimalValue(reader, "Ley");
+                    oProgramacionDiariaEntidad.TM_Ingresado = Reader.GetDecimalValue(reader, "tm_ingresado");
+                    oProgramacionDiariaEntidad.TM_Consumida = Reader.GetDecimalValue(reader, "tm_consumida");
                     oProgramacionDiariaEntidad.Stock = Reader.GetDecimalValue(reader, "stock");
                     ListaReporteStockDisponible.Add(oProgramacionDiariaEntidad);
                 }
@@ -305,6 +307,31 @@ namespace CoriPuno.Repositorio
             }
         }
 
+        public decimal SimuladorPeso(decimal tm)
+        {
+            SqlConnection cn = new SqlConnection(Conexion.CnCoriPuno);
+            decimal pesoneto = 0;
+            try
+            {
+                Conexion.abrirConexion(cn);
+                SqlCommand cmd = new SqlCommand("ScaleSimulation", cn);
+                cmd.Parameters.Add(new SqlParameter("@tm", SqlDbType.Decimal)).Value = tm;
+                cmd.Parameters.Add(new SqlParameter("@RESULTA", SqlDbType.Decimal)).Direction = ParameterDirection.Output;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+                pesoneto = decimal.Parse(cmd.Parameters["@RESULTA"].Value.ToString());
 
+
+                return pesoneto;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+            finally
+            {
+                Conexion.cerrarConexion(cn);
+            }
+        }
     }
 }
