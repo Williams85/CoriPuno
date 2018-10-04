@@ -111,6 +111,20 @@ namespace CoriPuno
                                   "~/Scripts/Controladores/DisponibilidadPlanta/disponibilidad-planta-route.js",
                                   "~/Scripts/Controladores/DisponibilidadPlanta/disponibilidad-planta-controller.js"));
 
+            //Programa de Blending
+            bundles.Add(new ScriptBundle("~/bundles/programa-blending").Include(
+                                  "~/Scripts/Controladores/Blending/blending-route.js",
+                                  "~/Scripts/Controladores/Blending/blending-controller.js"));
+
+            //Mantenimiento de Perfil
+            bundles.Add(new ScriptBundle("~/bundles/mantenimiento-perfil").Include(
+                                  "~/Scripts/Controladores/Perfil/perfil-route.js",
+                                  "~/Scripts/Controladores/Perfil/perfil-controller.js"));
+
+            //Formulación de Indicadores
+            bundles.Add(new ScriptBundle("~/bundles/formulacion-indicadores").Include(
+                                  "~/Scripts/Controladores/FormulacionIndicadores/formulacion-indicadores-route.js",
+                                  "~/Scripts/Controladores/FormulacionIndicadores/formulacion-indicadores-controller.js"));
 
         }
     }

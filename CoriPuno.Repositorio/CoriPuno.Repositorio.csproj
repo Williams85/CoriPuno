@@ -43,13 +43,17 @@
     <Compile Include="AreaRepositorio.cs" />
     <Compile Include="BaseDatos\Conexion.cs" />
     <Compile Include="BaseDatos\Reader.cs" />
+    <Compile Include="BlendingRepositorio.cs" />
     <Compile Include="ComponenteRepositorio.cs" />
     <Compile Include="ContrataRepositorio.cs" />
     <Compile Include="DistribucionEquiposRepositorio.cs" />
     <Compile Include="EquipoRepositorio.cs" />
     <Compile Include="ExtraccionBalanzaRepositorio.cs" />
+    <Compile Include="IndicadorRepositorio.cs" />
     <Compile Include="LaborRepositorio.cs" />
     <Compile Include="MinaRepositorio.cs" />
+    <Compile Include="PaginaRepositorio.cs" />
+    <Compile Include="PaqueteRepositorio.cs" />
     <Compile Include="ParametrosRepositorio.cs" />
     <Compile Include="PerfilNavegacionOpcionRepositorio.cs" />
     <Compile Include="PerfilNavegacionRepositorio.cs" />

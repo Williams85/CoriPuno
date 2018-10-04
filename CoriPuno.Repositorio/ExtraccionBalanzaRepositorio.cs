@@ -95,6 +95,7 @@ namespace CoriPuno.Repositorio
                 SqlCommand cmd = new SqlCommand("Extraccion_balanza_Grabar", cn);
                 cmd.Parameters.Add(new SqlParameter("@turno", SqlDbType.VarChar, 10)).Value = entidad.Turno;
                 cmd.Parameters.Add(new SqlParameter("@labor_or", SqlDbType.VarChar, 10)).Value = entidad.Labor_or;
+                cmd.Parameters.Add(new SqlParameter("@labor_de", SqlDbType.VarChar, 10)).Value = entidad.Labor_de;
                 cmd.Parameters.Add(new SqlParameter("@placa", SqlDbType.VarChar, 20)).Value = entidad.Placa;
                 cmd.Parameters.Add(new SqlParameter("@peso_ini", SqlDbType.Decimal)).Value = entidad.Peso;
                 cmd.Parameters.Add(new SqlParameter("@Fecha_fin", SqlDbType.DateTime)).Value = entidad.Fecha;

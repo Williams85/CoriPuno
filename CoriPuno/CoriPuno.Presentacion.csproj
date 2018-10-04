@@ -111,10 +111,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BlendingController.cs" />
     <Compile Include="Controllers\ComponenteController.cs" />
     <Compile Include="Controllers\ConsolidadoCarguioController.cs" />
     <Compile Include="Controllers\DisponibilidadPlantaController.cs" />
+    <Compile Include="Controllers\FormulacionIndicadoresController.cs" />
     <Compile Include="Controllers\MinaController.cs" />
+    <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\PoligonoController.cs" />
     <Compile Include="Controllers\VehiculoController.cs" />
     <Compile Include="Controllers\ZonaController.cs" />
@@ -209,6 +212,8 @@
     <None Include="Properties\PublishProfiles\CoriPuno.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\Controladores\ajax-mvc.js" />
+    <Content Include="Scripts\Controladores\Blending\blending-controller.js" />
+    <Content Include="Scripts\Controladores\Blending\blending-route.js" />
     <Content Include="Scripts\Controladores\CambioClave\cambio-clave-controller.js" />
     <Content Include="Scripts\Controladores\CambioClave\cambio-clave-route.js" />
     <Content Include="Scripts\Controladores\Componente\componente-controller.js" />
@@ -217,6 +222,8 @@
     <Content Include="Scripts\Controladores\ConsolidadoCarguio\consolidado-carguio-route.js" />
     <Content Include="Scripts\Controladores\DisponibilidadPlanta\disponibilidad-planta-controller.js" />
     <Content Include="Scripts\Controladores\DisponibilidadPlanta\disponibilidad-planta-route.js" />
+    <Content Include="Scripts\Controladores\FormulacionIndicadores\formulacion-indicadores-controller.js" />
+    <Content Include="Scripts\Controladores\FormulacionIndicadores\formulacion-indicadores-route.js" />
     <Content Include="Scripts\Controladores\Login\login-controller.js" />
     <Content Include="Scripts\Controladores\Login\login-route.js" />
     <Content Include="Scripts\Controladores\Mina\mina-controller.js" />
@@ -230,6 +237,8 @@
     <Content Include="Scripts\Controladores\functions.js" />
     <Content Include="Scripts\Controladores\CierreCarguio\cierre-carguio-controller.js" />
     <Content Include="Scripts\Controladores\CierreCarguio\cierre-carguio-route.js" />
+    <Content Include="Scripts\Controladores\Perfil\perfil-controller.js" />
+    <Content Include="Scripts\Controladores\Perfil\perfil-route.js" />
     <Content Include="Scripts\Controladores\Poligono\poligono-controller.js" />
     <Content Include="Scripts\Controladores\Poligono\poligono-route.js" />
     <Content Include="Scripts\Controladores\Ruta\ruta-controller.js" />
@@ -327,6 +336,14 @@
     <Content Include="Views\ConsolidadoCarguio\_ResultadoBusqueda.cshtml" />
     <Content Include="Views\DisponibilidadPlanta\Index.cshtml" />
     <Content Include="Views\DisponibilidadPlanta\_ActualizarStockDisponible.cshtml" />
+    <Content Include="Views\Blending\Index.cshtml" />
+    <Content Include="Views\Blending\_ResultadoEjecucionBlending.cshtml" />
+    <Content Include="Views\Perfil\Index.cshtml" />
+    <Content Include="Views\Perfil\_ResultadosBusqueda.cshtml" />
+    <Content Include="Views\FormulacionIndicadores\Index.cshtml" />
+    <Content Include="Views\FormulacionIndicadores\Nuevo.cshtml" />
+    <Content Include="Views\FormulacionIndicadores\Edicion.cshtml" />
+    <Content Include="Views\FormulacionIndicadores\_ResultadosBusqueda.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

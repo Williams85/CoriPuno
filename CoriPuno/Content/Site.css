@@ -103,6 +103,10 @@ body {
     width: 170px !important;
 }
 
+.left{
+    float:left;
+}
+
 .NoDatos {
     background: #2789b0;
     border-radius: 10px;

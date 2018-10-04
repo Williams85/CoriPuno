@@ -1,0 +1,136 @@
+﻿@model CoriPuno.Entidad.IndicadorEntidad
+@{
+    ViewBag.Title = "Edicion";
+}
+
+
+<h1>@ViewBag.TituloPagina</h1>
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+            @Html.HiddenFor(model => model.Id_Indicador)
+            <!-- Text input-->
+            <div class="form-group">
+                <label for="Perfil_Usuario" class="col-md-4 control-label">Indicador:</label>
+                <div class="col-md-2 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.Nom_Indicador, new { @class = "form-control", @maxlength = "100", @placeholder = "Indicador" })
+                    </div>
+                </div>
+                <div class="col-md-2 inputGroupContainer">
+                    <div class="input-group">
+                        @Html.TextBoxFor(model => model.Var_Indicador, new { @class = "form-control", @maxlength = "10", @placeholder = "Indicador" })
+                    </div>
+                </div>
+
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label for="Id_Componente" class="col-md-4 control-label">Componente:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        @Html.DropDownList("Id_Componente", new SelectList(ViewBag.ListaComponentes, "UnidadMedida", "Descripcion"), "Seleccionar", new { @class = "form-control" })
+                        <input type="button" id="btn-agregar-componente" class="btn btn-success" value="Agregar" />
+                    </div>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label for="Id_Operador" class="col-md-4 control-label">Operador:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        <select id="Id_Operador" name="Id_Operador" class="form-control">
+                            <option value="" selected>Seleccionar</option>
+                            <option value="+">Suma( + )</option>
+                            <option value="-">Resta( - )</option>
+                            <option value="*">Multiplicacion( * )</option>
+                            <option value="/">División( / )</option>
+                        </select>
+                        <input type="button" id="btn-agregar-operador" class="btn btn-success" value="Agregar" />
+                    </div>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label for="Id_Componente" class="col-md-4 control-label">Agrupador:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        <select id="Id_Agrupador" name="Id_Agrupador" class="form-control">
+                            <option value="" selected>Seleccionar</option>
+                            <option value="(">Parentesis Abierto (</option>
+                            <option value=")">Parentesis Cerrado )</option>
+                            <option value="{">LLave Abierto {</option>
+                            <option value="}">Llave Cerrado }</option>
+                            <option value="[">Corchete Abierto [</option>
+                            <option value="]">Corchete Cerrado ]</option>
+                            <option value="|">Barra |</option>
+                        </select>
+                        <input type="button" id="btn-agregar-agrupador" class="btn btn-success" value="Agregar" />
+                    </div>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label for="Id_Componente" class="col-md-4 control-label">Formula:</label>
+                <div class="col-md-12 selectContainer">
+                    <div class="input-group text-center">
+                        @Html.TextBoxFor(model => model.Ope_1, new { @class = "form-control oper-formula", @maxlength = "10", @readonly = "readonly", @style = "width:50px;padding:5px;" })
+                        @Html.TextBoxFor(model => model.Ope_2, new { @class = "form-control oper-formula", @maxlength = "10", @readonly = "readonly", @style = "width:50px;padding:5px;" })
+                        @Html.TextBoxFor(model => model.Ope_3, new { @class = "form-control oper-formula", @maxlength = "10", @readonly = "readonly", @style = "width:50px;padding:5px;" })
+                        @Html.TextBoxFor(model => model.Ope_4, new { @class = "form-control oper-formula", @maxlength = "10", @readonly = "readonly", @style = "width:50px;padding:5px;" })
+                        @Html.TextBoxFor(model => model.Ope_5, new { @class = "form-control oper-formula", @maxlength = "10", @readonly = "readonly", @style = "width:50px;padding:5px;" })
+                        @Html.TextBoxFor(model => model.Ope_6, new { @class = "form-control oper-formula", @maxlength = "10", @readonly = "readonly", @style = "width:50px;padding:5px;" })
+                        @Html.TextBoxFor(model => model.Ope_7, new { @class = "form-control oper-formula", @maxlength = "10", @readonly = "readonly", @style = "width:50px;padding:5px;" })
+                        @Html.TextBoxFor(model => model.Ope_8, new { @class = "form-control oper-formula", @maxlength = "10", @readonly = "readonly", @style = "width:50px;padding:5px;" })
+                        @Html.TextBoxFor(model => model.Ope_9, new { @class = "form-control oper-formula", @maxlength = "10", @readonly = "readonly", @style = "width:50px;padding:5px;" })
+                        @Html.TextBoxFor(model => model.Ope_10, new { @class = "form-control oper-formula", @maxlength = "10", @readonly = "readonly", @style = "width:50px;padding:5px;" })
+                        @Html.TextBoxFor(model => model.Ope_11, new { @class = "form-control oper-formula", @maxlength = "10", @readonly = "readonly", @style = "width:50px;padding:5px;" })
+                        @Html.TextBoxFor(model => model.Ope_12, new { @class = "form-control oper-formula", @maxlength = "10", @readonly = "readonly", @style = "width:50px;padding:5px;" })
+                        @Html.TextBoxFor(model => model.Ope_13, new { @class = "form-control oper-formula", @maxlength = "10", @readonly = "readonly", @style = "width:50px;padding:5px;" })
+                        @Html.TextBoxFor(model => model.Ope_14, new { @class = "form-control oper-formula", @maxlength = "10", @readonly = "readonly", @style = "width:50px;padding:5px;" })
+                        @Html.TextBoxFor(model => model.Ope_15, new { @class = "form-control oper-formula", @maxlength = "10", @readonly = "readonly", @style = "width:50px;padding:5px;" })
+                        @Html.TextBoxFor(model => model.Ope_16, new { @class = "form-control oper-formula", @maxlength = "10", @readonly = "readonly", @style = "width:50px;padding:5px;" })
+                        @Html.TextBoxFor(model => model.Ope_17, new { @class = "form-control oper-formula", @maxlength = "10", @readonly = "readonly", @style = "width:50px;padding:5px;" })
+                        @Html.TextBoxFor(model => model.Ope_18, new { @class = "form-control oper-formula", @maxlength = "10", @readonly = "readonly", @style = "width:50px;padding:5px;" })
+
+
+                        <input type="button" id="btn-delete-edit" class="btn btn-danger" value="Borrar" />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="alert alert-danger text-left" id="Message-Error">
+                <strong></strong>
+            </div>
+            <div class="alert alert-success text-left" id="Message-OK">
+                <strong></strong>
+            </div>
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-3">
+                    <input type="submit" id="btn-modificar" class="btn btn-primary" value="Grabar" />
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("Index", "FormulacionIndicadores")" class="btn btn-warning">Regresar</a>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+
+
+
+
+</div>
+
+@Scripts.Render("~/bundles/formulacion-indicadores")
+
+
+
+
+
+
+

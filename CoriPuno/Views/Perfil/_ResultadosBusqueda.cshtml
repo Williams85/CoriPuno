@@ -1,0 +1,103 @@
+﻿@model List<CoriPuno.Entidad.PerfilEntidad>
+    @{
+        ViewBag.Title = "_ResultadosBusqueda";
+    }
+    @if (Model != null && Model.Count > 0)
+    {
+
+        <table id="keywords" cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Perfil</th>
+                    <th>Activo</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="lalign">
+                            <button type="submit" class="btn btn-primary btn-sm btn-mostrar-paquete">Ver Paquetes</button>
+                        </td>
+                        <td class="lalign">@item.Nom_Perfil</td>
+                        <td>
+                            @if (item.Activo == true)
+                            {
+                                <input type="checkbox" checked disabled>
+                            }
+                            else
+                            {
+                                <input type="checkbox" disabled>
+                            }
+                        </td>
+                        <td>
+                            @using (Html.BeginForm("Edicion", "Perfil", FormMethod.Post, new { @role = "form" }))
+                            {
+                                <input type="hidden" id="Codigo" name="Codigo" value="@item.Id_Perfil" />
+                                <button type="submit" class="btn btn-primary btn-sm"><span class="separarboton glyphicon glyphicon-pencil"></span>Editar</button>
+                            }
+                        </td>
+
+                    </tr>
+                    if (item.ListaNavegacion != null && item.ListaNavegacion.Count > 0)
+                    {
+                        <tr class="view-paquetes">
+                            <td colspan="4">
+                                <table width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th width="20%"></th>
+                                            <th width="80%">Paquete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var elemento in item.ListaNavegacion)
+                                        {
+                                            <tr>
+                                                <td class="lalign">
+                                                    <button type="submit" class="btn btn-primary btn-sm btn-mostrar-pagina">Ver Pagina</button>
+                                                </td>
+                                                <td class="lalign">
+                                                    @elemento.Paquete.Nom_Paquete
+                                                </td>
+                                            </tr>
+                                            if (elemento.ListaPerfilNavegacionOpcion != null && elemento.ListaPerfilNavegacionOpcion.Count > 0)
+                                            {
+                                                <tr class="view-paginas">
+                                                    <td colspan="2">
+                                                        <table width="100%">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="lalign">Pagina</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                @foreach (var element in elemento.ListaPerfilNavegacionOpcion)
+                                                                {
+                                                                    <tr>
+                                                                        <td class="lalign">
+                                                                            @element.Pagina.Nom_Pagina
+                                                                        </td>
+                                                                    </tr>
+                                                                }
+
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    }
+
+                }
+            </tbody>
+        </table>
+    }
+

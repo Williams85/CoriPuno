@@ -45,9 +45,15 @@
     <Compile Include="Base\DistribucionEquiposEntidad.cs" />
     <Compile Include="Base\ComponenteEntidad.cs" />
     <Compile Include="ContrataEntidad.cs" />
+    <Compile Include="Base\DProducciontoPlanta_CabEntidad.cs" />
+    <Compile Include="Base\DProducciontoPlanta_dtmpEntidad.cs" />
+    <Compile Include="DProducciontoPlanta_CabEntidad.cs" />
     <Compile Include="EquipoEntidad.cs" />
     <Compile Include="Base\LaborEntidad.cs" />
+    <Compile Include="Base\ExtraccionBalanzaEntidad.cs" />
     <Compile Include="ExtraccionBalanzaEntidad.cs" />
+    <Compile Include="Base\IndicadorEntidad.cs" />
+    <Compile Include="IndicadorEntidad.cs" />
     <Compile Include="LaborEntidad.cs" />
     <Compile Include="Base\MinaEntidad.cs" />
     <Compile Include="Base\PoligonoEntidad.cs" />
@@ -57,6 +63,7 @@
     <Compile Include="Base\PerfilEntidad.cs" />
     <Compile Include="Base\PerfilNavegacionEntidad.cs" />
     <Compile Include="Base\PerfilNavegacionOpcionEntidad.cs" />
+    <Compile Include="PerfilEntidad.cs" />
     <Compile Include="PerfilNavegacionEntidad.cs" />
     <Compile Include="ProgramacionDiariaCabEntidad.cs" />
     <Compile Include="ProgramacionDiariaEntidad.cs" />

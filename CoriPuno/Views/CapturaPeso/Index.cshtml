@@ -36,7 +36,13 @@
                 <label class="col-md-4 control-label">Placa:</label>
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
-                        <input type="text" name="Placa" id="Placa" placeholder="Placa" class="form-control">
+                        <select name="Placa" id="Placa" class="form-control selectpicker">
+                            <option value="" selected>Seleccionar</option>
+                            @foreach (var item in ViewBag.ListaVehiculos)
+                            {
+                                <option value="@item.Placa">@item.Placa</option>
+                            }
+                        </select>
                     </div>
                 </div>
             </div>
@@ -63,8 +69,9 @@
 <input type="hidden" id="ProgPlaca" name="ProgPlaca" />
 <input type="hidden" id="ProgFecha" name="ProgFecha" />
 <input type="hidden" id="ProgTurno" name="ProgTurno" />
-<input type="hidden" id="ProgLabor" name="ProgLabor" />
-<input type="hidden" id="ProgLaborName" name="ProgLabor" />
+<input type="hidden" id="ProgLaborOrigen" name="ProgLaborOrigen" />
+<input type="hidden" id="ProgLaborDestino" name="ProgLaborDestino" />
+<input type="hidden" id="ProgLaborName" name="ProgLaborName" />
 
 
 <div style="margin:0 auto;width:70%;">
@@ -81,7 +88,25 @@
 </div>
 
 
-
+<div class="modal" tabindex="-1" role="dialog" id="ConfirmarCapturaPeso">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Captura de Peso de Transporte</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Confirmar Captura Peso?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btn-confirmar-peso">Si</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 @Scripts.Render("~/bundles/captura-peso")
 @Scripts.Render("~/bundles/script-layaout")

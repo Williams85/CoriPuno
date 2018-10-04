@@ -15,5 +15,10 @@ namespace CoriPuno.Dominio
         {
             return oEquipoRepositorio.listarEquipos();
         }
+        public List<EquipoEntidad> EquiposActivos()
+        {
+            return oEquipoRepositorio.EquiposActivos();
+        }
+
     }
 }

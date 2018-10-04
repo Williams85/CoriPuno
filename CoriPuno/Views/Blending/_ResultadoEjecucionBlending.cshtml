@@ -1,0 +1,74 @@
+﻿@model CoriPuno.Entidad.DProducciontoPlanta_CabEntidad
+@{
+    ViewBag.Title = "_ResultadoEjecucionBlending";
+}
+
+<div class="col-md-8 text-left">
+    @if (Model != null && Model.DetalleProduccionPlantaDTMP.Count > 0)
+    {
+        <h4>Resumen de Programación</h4>
+    <table id="keywords" class="left" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th><span>nReg</span></th>
+                <th><span>Cantidad Labores</span></th>
+                <th><span>Ley Optima</span></th>
+                <th><span>Total TM</span></th>
+                <th><span>Und. Minima</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Id_ToPlant</td>
+                <td>@Model.NCntLabores</td>
+                <td>@Model.NLeyOptima.ToString("F2")</td>
+                <td>@Model.NTot_TM.ToString("F2")</td>
+                <td>@Model.Und_Minina.ToString("F2")</td>
+            </tr>
+
+        </tbody>
+    </table>
+        <br />
+        <div class="clear"></div>
+        <h4>Programación Generación</h4>
+    <table id="keywords" class="left" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th><span>Id ToPlat</span></th>
+                <th><span>Labor</span></th>
+                <th><span>Ley</span></th>
+                <th><span>TM Disponible</span></th>
+                <th><span>TM Optimizado</span></th>
+                <th><span>Estado</span></th>
+                <th><span>Cant. Palas</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.DetalleProduccionPlantaDTMP)
+            {
+                <tr>
+                    <td>@item.Id_ToPlant</td>
+                    <td>@item.Id_Labor</td>
+                    <td>@item.Ley.ToString("F2")</td>
+                    <td>@item.TM_Disponible.ToString("F2")</td>
+                    <td>@item.TM_Optimizado.ToString("F2")</td>
+                    <td>G</td>
+                    <td>@item.TM_Optimizado.ToString("F2")</td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+
+
+    }
+</div>
+<div class="col-md-4">
+    <br />
+    <button type="button" id="btnConfirmar" name="btnConfirmar" class="btn btn-primary">Confirmar</button>
+    <button type="button" id="btnModificar" name="btnModificar" class="btn btn-primary">Modificar</button>
+    <button type="button" id="btnEliminar" name="btnEliminar" class="btn btn-primary">Eliminar</button>
+
+</div>
+

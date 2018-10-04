@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>@ViewBag.TituloPagina</h1>
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Perfil:</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="Nom_Perfil" id="Nom_Perfil" placeholder="Perfil" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-3">
+                    <input type="submit" id="btn-buscar" class="btn btn-primary" value="Buscar" />
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("Nuevo","Perfil")" class="btn btn-warning">Grabar</a>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+
+
+
+
+</div>
+<div id="IdResultado">
+
+</div>
+@Scripts.Render("~/bundles/mantenimiento-perfil")
+

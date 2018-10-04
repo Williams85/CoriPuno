@@ -16,3 +16,4 @@ D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Entidad\bin\Debug
 D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Entidad\bin\Debug\CoriPuno.Entidad.pdb
 D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Entidad\obj\Debug\CoriPuno.Entidad.dll
 D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Entidad\obj\Debug\CoriPuno.Entidad.pdb
+D:\Datos\Proyectos\Personal\CoriPuno\Fuentes\CoriPuno\CoriPuno.Entidad\obj\Debug\CoriPuno.Entidad.csprojResolveAssemblyReference.cache

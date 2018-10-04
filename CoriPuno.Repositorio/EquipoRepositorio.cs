@@ -46,5 +46,40 @@ namespace CoriPuno.Repositorio
                 Conexion.cerrarConexion(cn);
             }
         }
+
+        public List<EquipoEntidad> EquiposActivos()
+        {
+            SqlConnection cn = new SqlConnection(Conexion.CnCoriPuno);
+            try
+            {
+                Conexion.abrirConexion(cn);
+                SqlCommand cmd = new SqlCommand("usp_MEquipos_Listar", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                List<EquipoEntidad> listaEquipos = new List<EquipoEntidad>();
+                ;
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        EquipoEntidad oEquipoEntidad = new EquipoEntidad();
+                        oEquipoEntidad.IdEquipo = Reader.GetIntValue(reader, "id_equipo");
+                        oEquipoEntidad.MarcaCapacidad = Reader.GetStringValue(reader, "MarcaCapacidad");
+                        listaEquipos.Add(oEquipoEntidad);
+                    }
+                }
+
+                return listaEquipos;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                Conexion.cerrarConexion(cn);
+            }
+        }
+
+
     }
 }

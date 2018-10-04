@@ -239,6 +239,37 @@ namespace CoriPuno.Repositorio
             }
         }
 
+        public List<ProgramacionDiariaEntidad> buscarStockDisponible()
+        {
+            SqlConnection cn = new SqlConnection(Conexion.CnCoriPuno);
+            try
+            {
+                Conexion.abrirConexion(cn);
+                SqlCommand cmd = new SqlCommand("usp_ListarStockDisponible", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                List<ProgramacionDiariaEntidad> ListaStockDisponible = new List<ProgramacionDiariaEntidad>();
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    ProgramacionDiariaEntidad oProgramacionDiariaEntidad = new ProgramacionDiariaEntidad();
+                    oProgramacionDiariaEntidad.LaborDestino = Reader.GetStringValue(reader, "labor_de");
+                    oProgramacionDiariaEntidad.Ley = Reader.GetDecimalValue(reader, "Ley");
+                    oProgramacionDiariaEntidad.Stock = Reader.GetDecimalValue(reader, "stock");
+                    ListaStockDisponible.Add(oProgramacionDiariaEntidad);
+                }
+
+                return ListaStockDisponible;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                Conexion.cerrarConexion(cn);
+            }
+        }
+
         public List<ProgramacionDiariaEntidad> actualizarStockDisponible(List<ProgramacionDiariaEntidad> ListaProgramacionDiaria)
         {
             SqlConnection cn = new SqlConnection(Conexion.CnCoriPuno);
@@ -315,8 +346,8 @@ namespace CoriPuno.Repositorio
             {
                 Conexion.abrirConexion(cn);
                 SqlCommand cmd = new SqlCommand("ScaleSimulation", cn);
-                cmd.Parameters.Add(new SqlParameter("@tm", SqlDbType.Decimal)).Value = tm;
-                cmd.Parameters.Add(new SqlParameter("@RESULTA", SqlDbType.Decimal)).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(new SqlParameter("@tm", SqlDbType.Real)).Value = tm;
+                cmd.Parameters.Add(new SqlParameter("@RESULTA", SqlDbType.Real)).Direction = ParameterDirection.Output;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.ExecuteNonQuery();
                 pesoneto = decimal.Parse(cmd.Parameters["@RESULTA"].Value.ToString());

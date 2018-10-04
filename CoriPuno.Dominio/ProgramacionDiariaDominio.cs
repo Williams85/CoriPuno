@@ -42,6 +42,11 @@ namespace CoriPuno.Dominio
             return oProgramacionDiariaRepositorio.listarStockDisponible();
         }
 
+        public List<ProgramacionDiariaEntidad> buscarStockDisponible()
+        {
+            return oProgramacionDiariaRepositorio.buscarStockDisponible();
+        }
+
         public List<ProgramacionDiariaEntidad> actualizarStockDisponible(List<ProgramacionDiariaEntidad> ListaProgramacionDiaria)
         {
             return oProgramacionDiariaRepositorio.actualizarStockDisponible(ListaProgramacionDiaria);

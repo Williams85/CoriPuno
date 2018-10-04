@@ -13,6 +13,7 @@ namespace CoriPuno.Entidad
         public string Marca { get; set; }
         public int AñoFabricacion { get; set; }
         public string Equipo { get { return this.Descripcion + " " + this.Marca + " " + this.AñoFabricacion.ToString(); } }
+        public string MarcaCapacidad { get; set; }
 
     }
 }

@@ -1,0 +1,135 @@
+﻿
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+
+<h1>@ViewBag.TituloPagina</h1>
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+            <!-- Text input-->
+            <div class="form-group">
+                <label for="Perfil_Usuario" class="col-md-4 control-label">Indicador:</label>
+                <div class="col-md-2 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="Nom_Indicador" id="Nom_Indicador" placeholder="Indicador" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-2 inputGroupContainer">
+                    <div class="input-group">
+                        <input type="text" name="Var_Indicador" id="Var_Indicador" placeholder="Variable" class="form-control">
+                    </div>
+                </div>
+
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label for="Id_Componente" class="col-md-4 control-label">Componente:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        @Html.DropDownList("Id_Componente", new SelectList(ViewBag.ListaComponentes, "UnidadMedida", "Descripcion"), "Seleccionar", new { @class = "form-control" })
+                        <input type="button" id="btn-agregar-componente" class="btn btn-success" value="Agregar" />
+                    </div>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label for="Id_Operador" class="col-md-4 control-label">Operador:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        <select id="Id_Operador" name="Id_Operador" class="form-control">
+                            <option value="" selected>Seleccionar</option>
+                            <option value="+">Suma( + )</option>
+                            <option value="-">Resta( - )</option>
+                            <option value="*">Multiplicacion( * )</option>
+                            <option value="/">División( / )</option>
+                        </select>
+                        <input type="button" id="btn-agregar-operador" class="btn btn-success" value="Agregar" />
+                    </div>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label for="Id_Componente" class="col-md-4 control-label">Agrupador:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        <select id="Id_Agrupador" name="Id_Agrupador" class="form-control">
+                            <option value="" selected>Seleccionar</option>
+                            <option value="(">Parentesis Abierto (</option>
+                            <option value=")">Parentesis Cerrado )</option>
+                            <option value="{">LLave Abierto {</option>
+                            <option value="}">Llave Cerrado }</option>
+                            <option value="[">Corchete Abierto [</option>
+                            <option value="]">Corchete Cerrado ]</option>
+                            <option value="|">Barra |</option>
+                        </select>
+                        <input type="button" id="btn-agregar-agrupador" class="btn btn-success" value="Agregar" />
+                    </div>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label for="Id_Componente" class="col-md-4 control-label">Formula:</label>
+                <div class="col-md-12 selectContainer">
+                    <div class="input-group text-center">
+                        <input type="text" name="Ope_1" id="Ope_1" class="form-control oper-formula" style="width:50px;padding:5px;" readonly>
+                        <input type="text" name="Ope_2" id="Ope_2" class="form-control oper-formula" style="width:50px;padding:5px;" readonly>
+                        <input type="text" name="Ope_3" id="Ope_3" class="form-control oper-formula" style="width:50px;padding:5px;" readonly>
+                        <input type="text" name="Ope_4" id="Ope_4" class="form-control oper-formula" style="width:50px;padding:5px;" readonly>
+                        <input type="text" name="Ope_5" id="Ope_5" class="form-control oper-formula" style="width:50px;padding:5px;" readonly>
+                        <input type="text" name="Ope_6" id="Ope_6" class="form-control oper-formula" style="width:50px;padding:5px;" readonly>
+                        <input type="text" name="Ope_7" id="Ope_7" class="form-control oper-formula" style="width:50px;padding:5px;" readonly>
+                        <input type="text" name="Ope_8" id="Ope_8" class="form-control oper-formula" style="width:50px;padding:5px;" readonly>
+                        <input type="text" name="Ope_9" id="Ope_9" class="form-control oper-formula" style="width:50px;padding:5px;" readonly>
+                        <input type="text" name="Ope_10" id="Ope_10" class="form-control oper-formula" style="width:50px;padding:5px;" readonly>
+                        <input type="text" name="Ope_11" id="Ope_11" class="form-control oper-formula" style="width:50px;padding:5px;" readonly>
+                        <input type="text" name="Ope_12" id="Ope_12" class="form-control oper-formula" style="width:50px;padding:5px;" readonly>
+                        <input type="text" name="Ope_13" id="Ope_13" class="form-control oper-formula" style="width:50px;padding:5px;" readonly>
+                        <input type="text" name="Ope_14" id="Ope_14" class="form-control oper-formula" style="width:50px;padding:5px;" readonly>
+                        <input type="text" name="Ope_15" id="Ope_15" class="form-control oper-formula" style="width:50px;padding:5px;" readonly>
+                        <input type="text" name="Ope_16" id="Ope_16" class="form-control oper-formula" style="width:50px;padding:5px;" readonly>
+                        <input type="text" name="Ope_17" id="Ope_17" class="form-control oper-formula" style="width:50px;padding:5px;" readonly>
+                        <input type="text" name="Ope_18" id="Ope_18" class="form-control oper-formula" style="width:50px;padding:5px;" readonly>
+                        <input type="button" id="btn-delete-nuevo" class="btn btn-danger" value="Borrar" />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="alert alert-danger text-left" id="Message-Error">
+                <strong></strong>
+            </div>
+            <div class="alert alert-success text-left" id="Message-OK">
+                <strong></strong>
+            </div>
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-3">
+                    <input type="submit" id="btn-grabar" class="btn btn-primary" value="Grabar" />
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("Index", "FormulacionIndicadores")" class="btn btn-warning">Regresar</a>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+
+
+
+
+</div>
+
+@Scripts.Render("~/bundles/formulacion-indicadores")
+
+
+
+
+
+
+
+
+

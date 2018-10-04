@@ -19,12 +19,15 @@
                 <td>@Model.Contrata</td>
                 <td>@Model.Tara</td>
                 <td>@Model.Peso</td>
-                <td>@Model.PesoNeto</td>
+                <td>@Model.PesoNeto.ToString("F2")</td>
             </tr>
         </tbody>
     </table>
     <input type="hidden" id="ProgPeso" name="ProgPeso" value="@Model.Peso" />
     <input type="hidden" id="ProgPesoNeto" name="ProgPesoNeto" value="@Model.PesoNeto" />
+    <input type="hidden" id="ProgTMProg" name="ProgTMProg" value="" />
+    <input type="hidden" id="ProgTMEjec" name="ProgTMEjec" value="" />
+
 }
 else
 {

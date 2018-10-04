@@ -29,12 +29,19 @@
                     <td>@item.LaborDestino</td>
                     <td>@item.ToneladasProcesar</td>
                     <td>@item.ToneladasEjecucion</td>
-                    <td><input type="radio" value="" name="seleccion-prog" class="seleccion-prog" data-labor-name="@item.LaborOrigen" data-labor="@item.IdOrigen"></td>
+                    <td>
+                        <input type="radio" value="" name="seleccion-prog" class="seleccion-prog" data-labor-name="@item.LaborOrigen" data-labor-origen="@item.IdOrigen" data-labor-destino="@item.IdDestino" data-tm-prog="@item.ToneladasProcesar" data-tm-ejec="@item.ToneladasEjecucion">
+                        @*<input type="submit" id="btn-confirmar-peso" class="btn btn-primary" data-labor-name="@item.LaborOrigen" data-labor="@item.IdOrigen" value="Confirmar Capturar" />*@
+                    </td>
                 </tr>
             }
 
         </tbody>
     </table>
+    
+    <div class="row text-center">
+        <input type="submit" id="btn-exportar-detalle" class="btn btn-primary" value="Exportar" />
+    </div>
 }
 else
 {

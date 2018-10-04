@@ -15,6 +15,9 @@ namespace CoriPuno.Utilitario
         public const string TituloVehiculo = "Registrar Vehículo";
         public const string TituloPoligono = "Registrar Poligonos";
         public const string TituloComponente = "Registrar Componentes";
+        public const string TituloPerfil = "Registrar Perfil de Usuario";
+        public const string TituloFormIndicadores = "Formulación de Incadores";
+
         #endregion
 
         #region "Login"
@@ -28,6 +31,15 @@ namespace CoriPuno.Utilitario
         public const string NoModificoPoligono = "No se modificó el poligono...";
         public const string ExistePoligono = "El poligono ingresada ya existe...";
         #endregion
+
+        #region "Mantenimiento Perfil"
+        public const string GraboPerfil = "Se grabó el perfil...";
+        public const string NoGraboPerfil = "No se grabó el perfil...";
+        public const string ModificoPerfil = "Se modificó el perfil...";
+        public const string NoModificoPerfil = "No se modificó el perfil...";
+        public const string ExistePerfil = "El perfil ingresada ya existe...";
+        #endregion
+
 
         #region "Mantenimiento Zona"
         public const string GraboZona = "Se grabó la zona...";

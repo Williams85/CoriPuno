@@ -40,13 +40,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaDominio.cs" />
+    <Compile Include="BlendingDominio.cs" />
     <Compile Include="ComponenteDominio.cs" />
     <Compile Include="ContrataDominio.cs" />
     <Compile Include="DistribucionEquiposDominio.cs" />
     <Compile Include="EquipoDominio.cs" />
     <Compile Include="ExtraccionBalanzaDominio.cs" />
+    <Compile Include="IndicadorDominio.cs" />
     <Compile Include="LaborDominio.cs" />
     <Compile Include="MinaDominio.cs" />
+    <Compile Include="PaginaDominio.cs" />
+    <Compile Include="PaqueteDominio.cs" />
+    <Compile Include="PaqueteRepositorio.cs" />
     <Compile Include="ParametrosDominio.cs" />
     <Compile Include="PerfilDominio.cs" />
     <Compile Include="PoligonoDominio.cs" />

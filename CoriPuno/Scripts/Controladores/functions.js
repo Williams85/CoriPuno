@@ -119,10 +119,6 @@ var Constantes = {
         ErrorUndMedida: "Unidad de Medida incorrecta",
         ErrorFuente: "Fuente incorrecta",
         ErrorProcedimiento: "Procedimiento incorrecta",
-        //ErrorTara: "Tara incorrecta",
-        //ErrorCapacidad: "Capacidad incorrecta",
-        //ErrorContrata: "Contrata incorrecta",
-        //ErrorMarca: "Marca incorrecta",
 
         //Mensaje Mantenimiento Mina
         FaltaMina: "Ingresar la descripcion",
@@ -177,6 +173,11 @@ var Constantes = {
 
         ErrorDistanciaRuta: "La distancia de la ruta es incorrecto.",
         ErrorFactorRuta: "El factor de la ruta es incorrecto.",
+
+        //Formulacion de Indicadores
+        FaltaNomIndicador: "Ingresar el indicador",
+        FaltaVarIndicador: "Ingresar la variables del indicador",
+        FaltaFormula: "Ingresar la formula",
 
 
     },
